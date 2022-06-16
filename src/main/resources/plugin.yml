@@ -1,0 +1,5 @@
+name: Aribnb
+version: '${project.version}'
+main: aribnb.aribnb.Aribnb
+api-version: 1.19
+authors: [ radioboos ]
