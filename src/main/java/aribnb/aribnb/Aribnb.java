@@ -1,6 +1,6 @@
 package aribnb.aribnb;
 
-import aribnb.aribnb.systems.soulsystem.SoulSystem;
+import aribnb.systems.soulsystem.SoulSystem;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

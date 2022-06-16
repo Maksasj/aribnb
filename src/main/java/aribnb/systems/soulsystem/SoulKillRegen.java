@@ -1,4 +1,4 @@
-package aribnb.aribnb.systems.soulsystem;
+package aribnb.systems.soulsystem;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;

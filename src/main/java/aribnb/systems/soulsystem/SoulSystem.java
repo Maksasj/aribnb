@@ -1,6 +1,6 @@
-package aribnb.aribnb.systems.soulsystem;
+package aribnb.systems.soulsystem;
 
-import aribnb.aribnb.systems.soulsystem.SoulKillRegen;
+import aribnb.systems.soulsystem.SoulKillRegen;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
@@ -59,9 +59,15 @@ public class SoulSystem {
         return 10.0;
     }
 
+    public static void clampPlayerSouls(Player player) {
+        if(getPlayerSouls(player) > getPlayerMaxSouls(player)) {
+            setSoulToPlayer(player, getPlayerMaxSouls(player));
+        }
+    }
+
     public static void showSoulsInTitle(Player player) {
         if(SOUL_POOL.containsKey(player) && MAX_SOUL_POOL.containsKey(player)) {
-            String message = "§bSouls: §f"+SOUL_POOL.get(player).toString()+"/"+MAX_SOUL_POOL.get(player).toString();
+            String message = "§bSouls: "+SOUL_POOL.get(player).toString()+"/"+MAX_SOUL_POOL.get(player).toString();
             player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
         } else {
             setupPlayerSouls(player);
