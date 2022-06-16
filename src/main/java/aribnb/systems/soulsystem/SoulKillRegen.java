@@ -7,15 +7,19 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 
 public class SoulKillRegen implements Listener {
+    SoulSystem soulsystem;
+
+    public SoulKillRegen(SoulSystem sy) {
+        soulsystem = sy;
+    }
 
     @EventHandler
     public void regenSoulOnKill(EntityDeathEvent event) {
         Entity dead_entity = event.getEntity();
 
-        if (dead_entity.getLastDamageCause() instanceof Player) {
-            Player player = (Player) dead_entity.getLastDamageCause();
-            System.out.println("TODO");
-            SoulSystem.addSoulToPlayer(player, 1.0);
+        Player player = (Player) event.getEntity().getKiller();
+        if(player != null) {
+            soulsystem.addSoulToPlayer(player, 1.0);
         }
     }
 }
