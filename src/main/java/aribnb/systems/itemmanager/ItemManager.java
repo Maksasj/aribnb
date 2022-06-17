@@ -1,7 +1,11 @@
 package aribnb.systems.itemmanager;
 
-public class ItemManager {
-    public ItemManager() {
+import aribnb.systems.itemmanager.items.artifacts.EnderPouch.EnderPouch;
 
+public class ItemManager {
+    public EnderPouch enderpouch;
+
+    public ItemManager() {
+        enderpouch = new EnderPouch();
     }
 }

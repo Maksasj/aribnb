@@ -1,5 +1,6 @@
 package aribnb.systems.soulsystem;
 
+import aribnb.aribnb.Aribnb;
 import aribnb.systems.soulsystem.SoulKillRegen;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -18,7 +19,7 @@ public class SoulSystem {
 
     public SoulSystem(Plugin plugin) {
         parent_plugin = plugin;
-        getServer().getPluginManager().registerEvents(new SoulKillRegen(this), parent_plugin);
+        getServer().getPluginManager().registerEvents(new SoulKillRegen(this), Aribnb.getPlugin());
     }
 
     public static void setScheduler() {
