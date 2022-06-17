@@ -18,13 +18,11 @@ public class OpenEnderPouchListener implements Listener {
 
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
-        if(event.getAction().equals(Action.RIGHT_CLICK_AIR)) {
+        if(event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
             if (event.getPlayer().getInventory().getItemInMainHand().getType() == Material.ENDER_EYE) {
                 Player player = (Player) event.getPlayer();
-
                 AribnbNbtFormater nbt = new AribnbNbtFormater(player.getInventory().getItemInMainHand());
                 if(nbt.hasStringField("aribnb_artifact")) {
-
                     if(nbt.getStringField("aribnb_artifact").equals("aribnb_enderpouch")) {
                         event.setCancelled(true);
                         player.openInventory(player.getEnderChest());
