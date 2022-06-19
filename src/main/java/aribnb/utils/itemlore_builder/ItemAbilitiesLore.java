@@ -6,7 +6,6 @@ import java.util.List;
 public class ItemAbilitiesLore {
     private static List<String> ability_description = new ArrayList<>();
     private static String abilitie_type;
-
     public ItemAbilitiesLore(List<String> description, AbilitieLoreType type) {
         ability_description = description;
         abilitie_type = type.toString();

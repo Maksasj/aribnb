@@ -53,8 +53,6 @@ public class EnderPouch {
 
         ender_pouch = item;
 
-        System.out.println("adjsbka");
-
         ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_enderpouch_craft"), item);
         sr.shape(   "BCB",
                     "BEB",
