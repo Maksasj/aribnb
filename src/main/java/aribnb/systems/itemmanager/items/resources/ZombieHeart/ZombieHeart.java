@@ -18,7 +18,6 @@ public class ZombieHeart {
     public ItemStack zombieheart;
 
     public ZombieHeart() {
-        System.out.println("faskjfnakmfakfnkafnakfna");
         ItemStack item = new ItemStack(Material.ROTTEN_FLESH, 1);
 
         ItemMeta meta = item.getItemMeta();
