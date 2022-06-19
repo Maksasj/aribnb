@@ -3,17 +3,13 @@ package aribnb.systems.itemmanager.items.weapons.swords;
 import aribnb.aribnb.Aribnb;
 import aribnb.systems.itemmanager.ItemManager;
 import aribnb.systems.itemmanager.items.resources.ZombieHeart.ZombieHeart;
-import aribnb.utils.itemlore_builder.ItemLoreBuilder;
-import aribnb.utils.itemlore_builder.Rarities;
+import aribnb.utils.itemlore_builder.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
-import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.RecipeChoice;
-import org.bukkit.inventory.ShapedRecipe;
+import org.bukkit.inventory.*;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
@@ -28,13 +24,17 @@ public class ZombieSlayer {
 
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("§r§9Zombie slayer");
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "Melee attack damage",6.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "Melee attack damage",-2.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
 
+        //Lore builder
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.setItemType("SWORD");
         lorebuilder.setRarity(Rarities.RARE);
-
+        lorebuilder.addAttributeLore(AttributeSlotType.MAIN_HAND, new AttributeLoreType(6.0, AttributeType.getFromGeneric(Attribute.GENERIC_ATTACK_DAMAGE)));
+        lorebuilder.addAttributeLore(AttributeSlotType.MAIN_HAND, new AttributeLoreType(-2.5, AttributeType.getFromGeneric(Attribute.GENERIC_ATTACK_SPEED)));
         meta.setLore(lorebuilder.buildLore());
 
         PersistentDataContainer data = meta.getPersistentDataContainer();

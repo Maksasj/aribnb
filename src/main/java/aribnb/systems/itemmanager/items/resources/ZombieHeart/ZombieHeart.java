@@ -24,6 +24,7 @@ public class ZombieHeart {
         meta.setDisplayName("§r§aZombie heart");
         meta.addEnchant(Enchantment.LUCK, 1, false);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.setItemType("RESOURCE");

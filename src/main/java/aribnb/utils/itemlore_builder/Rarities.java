@@ -1,14 +1,14 @@
 package aribnb.utils.itemlore_builder;
 
 public enum Rarities {
-    COMMON("§fCOMMON"),
-    UNCOMMON("§aUNCOMMON"),
-    RARE("§9RARE"),
-    EPIC("§5EPIC"),
-    LEGENDARY("§6LEGENDARY"),
-    MYTHIC("§dMYTHIC"),
-    DIVINE("§bDIVINE"),
-    SUPREME("§cSUPREME");
+    COMMON("§fCommon"),
+    UNCOMMON("§aUncommon"),
+    RARE("§9Rare"),
+    EPIC("§5Epic"),
+    LEGENDARY("§6Legendary"),
+    MYTHIC("§dMythic"),
+    DIVINE("§bDivine"),
+    SUPREME("§cSupreme");
 
     private final String text;
 

@@ -39,6 +39,7 @@ public class SoulBottle {
         meta.setDisplayName("§r§5Soul bottle");
         meta.addEnchant(Enchantment.LUCK, 1, false);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 
         PotionMeta pmeta = (PotionMeta) meta;
         PotionData pdata = new PotionData(PotionType.WATER);
