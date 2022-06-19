@@ -39,8 +39,8 @@ public class AribnbNbtFormater {
         return data.get(new NamespacedKey(Aribnb.getPlugin(), id), PersistentDataType.INTEGER);
     }
 
-    public Float getFloatField(String id) {
-        return data.get(new NamespacedKey(Aribnb.getPlugin(), id), PersistentDataType.FLOAT);
+    public Double getDoubleField(String id) {
+        return data.get(new NamespacedKey(Aribnb.getPlugin(), id), PersistentDataType.DOUBLE);
     }
 
     public void setStrField(String id, String value) {
@@ -51,7 +51,7 @@ public class AribnbNbtFormater {
         data.set(new NamespacedKey(Aribnb.getPlugin(), id), PersistentDataType.INTEGER, value);
     }
 
-    public void setFloatField(String id, Float value) {
-        data.set(new NamespacedKey(Aribnb.getPlugin(), id), PersistentDataType.FLOAT, value);
+    public void setDoubleField(String id, Double value) {
+        data.set(new NamespacedKey(Aribnb.getPlugin(), id), PersistentDataType.DOUBLE, value);
     }
 }

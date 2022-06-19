@@ -6,13 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemLoreBuilder {
-    private static List<String> lore = new ArrayList<>();
-    private static List<ItemAbilitiesLore> abilitie_lore = new ArrayList<>();
+    private static List<String> lore;
+    private static List<String> custom_info;
+    private static List<ItemAbilitiesLore> abilitie_lore;
     private static Rarities rarity;
-
     private static String itemtype;
 
-    public ItemLoreBuilder() {};
+    public ItemLoreBuilder() {
+        lore = new ArrayList<>();
+        custom_info = new ArrayList<>();
+        abilitie_lore = new ArrayList<>();
+    };
 
     public void setRarity(Rarities value) {
         rarity = value;
@@ -26,12 +30,32 @@ public class ItemLoreBuilder {
         itemtype = value;
     }
 
+    public void addCustomInfo(String value) {
+        custom_info.add(value);
+    }
+
     public void addItemAbilitieLore(ItemAbilitiesLore value) {
         abilitie_lore.add(value);
     }
 
+    public void clear() {
+        itemtype = null;
+        rarity = null;
+        abilitie_lore.clear();
+        custom_info.clear();
+        lore.clear();
+    }
+
     public List<String> buildLore() {
         List<String> tmp = new ArrayList<>();
+
+        //Custom info
+        if(custom_info.size() > 0) {
+            tmp.add("");
+            for (String var : custom_info) {
+                tmp.add("§r"+var);
+            }
+        }
 
         //Items lore
         if(lore.size() > 0) {

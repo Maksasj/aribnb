@@ -48,7 +48,9 @@ public class SoulBottle {
         ab_lore.add("Store and accumulate");
         ab_lore.add("gained souls");
 
+
         lorebuilder.setItemType("ARTIFACT");
+        lorebuilder.addCustomInfo("§bSouls stored: 52.0/100.0");
         lorebuilder.setRarity(Rarities.EPIC);
 
         lorebuilder.addItemAbilitieLore(new ItemAbilitiesLore(ab_lore, AbilitieLoreType.CLICK));
@@ -56,9 +58,11 @@ public class SoulBottle {
         pmeta.setBasePotionData(pdata);
         pmeta.setLore(lorebuilder.buildLore());
 
+        //Custom tags
         PersistentDataContainer data = meta.getPersistentDataContainer();
         data.set(new NamespacedKey(Aribnb.getPlugin(), "aribnb_artifact"), PersistentDataType.STRING, "aribnb_soulbottle");
-        data.set(new NamespacedKey(Aribnb.getPlugin(), "aribnb_soulbottle_capacity"), PersistentDataType.INTEGER, 0);
+        data.set(new NamespacedKey(Aribnb.getPlugin(), "aribnb_soulbottle_capacity"), PersistentDataType.DOUBLE, 52.0);
+        data.set(new NamespacedKey(Aribnb.getPlugin(), "aribnb_soulbottle_max_capacity"), PersistentDataType.DOUBLE, 100.0);
         item.setItemMeta(meta);
 
         soul_bottle = item;
@@ -73,5 +77,6 @@ public class SoulBottle {
 
         Bukkit.getServer().addRecipe(sr);
         getServer().getPluginManager().registerEvents(new OpenSoulBottleListener(), Aribnb.getPlugin());
+        getServer().getPluginManager().registerEvents(new OpenSoulBottleGuiListener(), Aribnb.getPlugin());
     }
 }

@@ -19,6 +19,7 @@ public class OpenSoulBottleListener implements Listener {
                 AribnbNbtFormater nbt = new AribnbNbtFormater(player.getInventory().getItemInMainHand());
                 if(nbt.hasStringField("aribnb_artifact")) {
                     if(nbt.getStringField("aribnb_artifact").equals("aribnb_soulbottle")) {
+                        player.openInventory(new SoulBottleGui().getInventory());
                         event.setCancelled(true);
                         System.out.println("Todo");
                     }
