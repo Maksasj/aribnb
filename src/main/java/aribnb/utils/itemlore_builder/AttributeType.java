@@ -21,7 +21,10 @@ public enum AttributeType {
     public static AttributeType getFromGeneric(Attribute attribute) {
         if(attribute.equals(Attribute.GENERIC_ATTACK_DAMAGE)) {
             return ATTACK_DAMAGE;
+        } else if (attribute.equals(Attribute.GENERIC_ATTACK_SPEED)) {
+            return ATTACK_SPEED;
+        } else {
+            return NONE;
         }
-        return NONE;
     }
 }

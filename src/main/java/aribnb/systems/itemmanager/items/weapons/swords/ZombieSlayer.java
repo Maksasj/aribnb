@@ -4,6 +4,7 @@ import aribnb.aribnb.Aribnb;
 import aribnb.systems.itemmanager.ItemManager;
 import aribnb.systems.itemmanager.items.resources.ZombieHeart.ZombieHeart;
 import aribnb.utils.itemlore_builder.*;
+import com.google.common.collect.Multimap;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -14,6 +15,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
+import java.util.Collection;
+import java.util.Map;
 import java.util.UUID;
 
 public class ZombieSlayer {
@@ -33,8 +36,7 @@ public class ZombieSlayer {
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.setItemType("SWORD");
         lorebuilder.setRarity(Rarities.RARE);
-        lorebuilder.addAttributeLore(AttributeSlotType.MAIN_HAND, new AttributeLoreType(6.0, AttributeType.getFromGeneric(Attribute.GENERIC_ATTACK_DAMAGE)));
-        lorebuilder.addAttributeLore(AttributeSlotType.MAIN_HAND, new AttributeLoreType(-2.5, AttributeType.getFromGeneric(Attribute.GENERIC_ATTACK_SPEED)));
+        lorebuilder.buildAttributeLoreFromMeta(meta);
         meta.setLore(lorebuilder.buildLore());
 
         PersistentDataContainer data = meta.getPersistentDataContainer();
@@ -45,7 +47,6 @@ public class ZombieSlayer {
         zombieslayer = item;
 
         ItemStack zombieheart = ItemManager.getZombieHeart();
-
         ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_zombieslayer_craft"), item);
         sr.shape(   " D ",
                     " Z ",

@@ -1,7 +1,11 @@
 package aribnb.utils.itemlore_builder;
 
+import com.google.common.collect.Multimap;
 import org.bukkit.ChatColor;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,10 +17,31 @@ public class ItemLoreBuilder {
     private static List<String> custom_info;
     private static List<ItemAbilitiesLore> abilitie_lore;
 
+    //Using hashmap for grouping purpose
     private static HashMap<AttributeSlotType, List<AttributeLoreType>> attributeloretype;
     private static Rarities rarity;
     private static String itemtype;
     private static String reforge;
+
+    public void buildAttributeLoreFromMeta(ItemMeta meta) {
+        Multimap<Attribute, AttributeModifier> map = meta.getAttributeModifiers();
+
+        for (Map.Entry entry : map.entries()) {
+            Attribute key = (Attribute) entry.getKey();
+            AttributeModifier value = (AttributeModifier) entry.getValue();
+
+            AttributeSlotType slot = AttributeSlotType.getFromGeneric(value.getSlot());
+            AttributeLoreType atloretype = new AttributeLoreType(value.getAmount(), AttributeType.getFromGeneric(key));
+
+            if(attributeloretype.containsKey(slot)) {
+                attributeloretype.get(slot).add(atloretype);
+            } else {
+                List<AttributeLoreType> attribute_list = new ArrayList<>();
+                attribute_list.add(atloretype);
+                attributeloretype.put(slot, attribute_list);
+            }
+        }
+    }
 
     public ItemLoreBuilder() {
         lore = new ArrayList<>();
@@ -101,7 +126,6 @@ public class ItemLoreBuilder {
         //Attribute lore
         if(attributeloretype.size() > 0) {
             tmp.add("");
-
             for (Map.Entry<AttributeSlotType, List<AttributeLoreType>> entry : attributeloretype.entrySet()) {
                 AttributeSlotType key = entry.getKey();
 
