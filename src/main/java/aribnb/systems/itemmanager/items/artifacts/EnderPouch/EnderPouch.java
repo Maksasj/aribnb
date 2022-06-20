@@ -1,16 +1,14 @@
 package aribnb.systems.itemmanager.items.artifacts.EnderPouch;
 
 import aribnb.aribnb.Aribnb;
-import aribnb.systems.itemmanager.items.artifacts.EnderPouch.OpenEnderPouchListener;
+import aribnb.systems.itemmanager.Item;
 
-import aribnb.systems.soulsystem.SoulKillRegen;
 import aribnb.utils.itemlore_builder.AbilitieLoreType;
 import aribnb.utils.itemlore_builder.ItemAbilitiesLore;
 import aribnb.utils.itemlore_builder.ItemLoreBuilder;
 import aribnb.utils.itemlore_builder.Rarities;
-import jdk.tools.jlink.plugin.Plugin;
+import aribnb.utils.nbt_formater.AribnbNbtFormater;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
@@ -26,11 +24,10 @@ import java.util.List;
 
 import static org.bukkit.Bukkit.getServer;
 
-public class EnderPouch {
-    public static ItemStack ender_pouch;
+public class EnderPouch extends Item {
 
     public EnderPouch() {
-        ItemStack item = new ItemStack(Material.ENDER_EYE, 1);
+        item = new ItemStack(Material.ENDER_EYE, 1);
 
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("§r§9Ender pouch");
@@ -38,21 +35,20 @@ public class EnderPouch {
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 
-        ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
-        lorebuilder.setItemType("ARTIFACT");
-        lorebuilder.setRarity(Rarities.RARE);
+        AribnbNbtFormater nbtFormater = new AribnbNbtFormater(meta);
+        nbtFormater.setStrField("aribnb_artifact", "aribnb_enderpouch");
 
         List<String> ab_lore = new ArrayList<>();;
         ab_lore.add("Open your ender chest");
         ab_lore.add("everywhere you want");
+
+        ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
+        lorebuilder.setItemType("ARTIFACT");
+        lorebuilder.setRarity(Rarities.RARE);
         lorebuilder.addItemAbilitieLore(new ItemAbilitiesLore(ab_lore, AbilitieLoreType.RIGHT_CLICK));
         meta.setLore(lorebuilder.buildLore());
 
-        PersistentDataContainer data = meta.getPersistentDataContainer();
-        data.set(new NamespacedKey(Aribnb.getPlugin(), "aribnb_artifact"), PersistentDataType.STRING, "aribnb_enderpouch");
         item.setItemMeta(meta);
-
-        ender_pouch = item;
 
         ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_enderpouch_craft"), item);
         sr.shape(   "BCB",

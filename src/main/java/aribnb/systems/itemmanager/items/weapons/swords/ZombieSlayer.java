@@ -1,6 +1,7 @@
 package aribnb.systems.itemmanager.items.weapons.swords;
 
 import aribnb.aribnb.Aribnb;
+import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemManager;
 import aribnb.systems.itemmanager.items.resources.ZombieHeart.ZombieHeart;
 import aribnb.systems.runesystem.RuneManager;
@@ -21,21 +22,12 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.UUID;
 
-public class ZombieSlayer {
-    public ItemStack zombieslayer;
-
-    public void setDamage(ItemMeta meta, Double value, EquipmentSlot slot) {
-        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "Melee attack damage",value, AttributeModifier.Operation.ADD_NUMBER, slot));
-    }
-
-    public void setAttackSpeed(ItemMeta meta, Double value, EquipmentSlot slot) {
-        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "Melee attack speed",value, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
-    }
+public class ZombieSlayer extends Item {
 
     public ZombieSlayer() {
-        ItemStack zombieslayer = new ItemStack(Material.STONE_SWORD, 1);
+        item = new ItemStack(Material.STONE_SWORD, 1);
 
-        ItemMeta meta = zombieslayer.getItemMeta();
+        ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("§r§9Zombie slayer");
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -55,10 +47,10 @@ public class ZombieSlayer {
         lorebuilder.buildRuneFromMeta(meta);
         meta.setLore(lorebuilder.buildLore());
 
-        zombieslayer.setItemMeta(meta);
+        item.setItemMeta(meta);
 
-        ItemStack zombieheart = ItemManager.getZombieHeart();
-        ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_zombieslayer_craft"), zombieslayer);
+        ItemStack zombieheart = ItemManager.getItem("aribnb_zombieheart");
+        ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_zombieslayer_craft"), item);
         sr.shape(   " D ",
                     " Z ",
                     " S ");

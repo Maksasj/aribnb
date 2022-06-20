@@ -1,6 +1,7 @@
 package aribnb.systems.itemmanager.items.artifacts.SoulBottle;
 
 import aribnb.aribnb.Aribnb;
+import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.items.artifacts.EnderPouch.OpenEnderPouchListener;
 
 import aribnb.systems.soulsystem.SoulKillRegen;
@@ -8,6 +9,7 @@ import aribnb.utils.itemlore_builder.AbilitieLoreType;
 import aribnb.utils.itemlore_builder.ItemAbilitiesLore;
 import aribnb.utils.itemlore_builder.ItemLoreBuilder;
 import aribnb.utils.itemlore_builder.Rarities;
+import aribnb.utils.nbt_formater.AribnbNbtFormater;
 import jdk.tools.jlink.plugin.Plugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -29,11 +31,10 @@ import java.util.List;
 
 import static org.bukkit.Bukkit.getServer;
 
-public class SoulBottle {
-    public static ItemStack soul_bottle;
+public class SoulBottle extends Item {
 
     public SoulBottle() {
-        ItemStack item = new ItemStack(Material.POTION, 1);
+        item = new ItemStack(Material.POTION, 1);
 
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("§r§5Soul bottle");
@@ -49,24 +50,20 @@ public class SoulBottle {
         ab_lore.add("Store and accumulate");
         ab_lore.add("gained souls");
 
-
         lorebuilder.setItemType("ARTIFACT");
-        lorebuilder.addCustomInfo("§bSouls stored: 52.0/100.0");
+        lorebuilder.addCustomInfo("§bSouls stored: 0.0/100.0");
         lorebuilder.setRarity(Rarities.EPIC);
-
         lorebuilder.addItemAbilitieLore(new ItemAbilitiesLore(ab_lore, AbilitieLoreType.CLICK));
 
         pmeta.setBasePotionData(pdata);
         pmeta.setLore(lorebuilder.buildLore());
 
-        //Custom tags
-        PersistentDataContainer data = meta.getPersistentDataContainer();
-        data.set(new NamespacedKey(Aribnb.getPlugin(), "aribnb_artifact"), PersistentDataType.STRING, "aribnb_soulbottle");
-        data.set(new NamespacedKey(Aribnb.getPlugin(), "aribnb_soulbottle_capacity"), PersistentDataType.DOUBLE, 52.0);
-        data.set(new NamespacedKey(Aribnb.getPlugin(), "aribnb_soulbottle_max_capacity"), PersistentDataType.DOUBLE, 100.0);
-        item.setItemMeta(meta);
+        AribnbNbtFormater nbtFormater = new AribnbNbtFormater(meta);
+        nbtFormater.setStrField("aribnb_artifact", "aribnb_soulbottle");
+        nbtFormater.setDoubleField("aribnb_soulbottle_capacity", 0.0);
+        nbtFormater.setDoubleField("aribnb_soulbottle_max_capacity", 100.0);
 
-        soul_bottle = item;
+        item.setItemMeta(meta);
 
         ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_soulbottle_craft"), item);
         sr.shape(   " B ",
