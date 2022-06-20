@@ -3,6 +3,7 @@ package aribnb.systems.itemmanager.items.weapons.swords;
 import aribnb.aribnb.Aribnb;
 import aribnb.systems.itemmanager.ItemManager;
 import aribnb.systems.itemmanager.items.resources.ZombieHeart.ZombieHeart;
+import aribnb.systems.runesystem.RuneManager;
 import aribnb.utils.itemlore_builder.*;
 import com.google.common.collect.Multimap;
 import org.bukkit.Bukkit;
@@ -37,6 +38,7 @@ public class ZombieSlayer {
         lorebuilder.setItemType("SWORD");
         lorebuilder.setRarity(Rarities.RARE);
         lorebuilder.buildAttributeLoreFromMeta(meta);
+        lorebuilder.addRuneLore(RuneManager.getRune("aribnb_runevampire"));
         meta.setLore(lorebuilder.buildLore());
 
         PersistentDataContainer data = meta.getPersistentDataContainer();

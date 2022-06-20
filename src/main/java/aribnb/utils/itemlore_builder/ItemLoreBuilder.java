@@ -1,5 +1,6 @@
 package aribnb.utils.itemlore_builder;
 
+import aribnb.systems.runesystem.Rune;
 import com.google.common.collect.Multimap;
 import org.bukkit.ChatColor;
 import org.bukkit.attribute.Attribute;
@@ -19,6 +20,8 @@ public class ItemLoreBuilder {
 
     //Using hashmap for grouping purpose
     private static HashMap<AttributeSlotType, List<AttributeLoreType>> attributeloretype;
+
+    private static List<Rune> runes;
     private static Rarities rarity;
     private static String itemtype;
     private static String reforge;
@@ -47,6 +50,7 @@ public class ItemLoreBuilder {
         lore = new ArrayList<>();
         custom_info = new ArrayList<>();
         abilitie_lore = new ArrayList<>();
+        runes = new ArrayList<>();
         attributeloretype= new HashMap<AttributeSlotType, List<AttributeLoreType>>();
     };
 
@@ -71,6 +75,10 @@ public class ItemLoreBuilder {
 
     public void addItemAbilitieLore(ItemAbilitiesLore value) {
         abilitie_lore.add(value);
+    }
+
+    public void addRuneLore(Rune rune) {
+        runes.add(rune);
     }
 
     public void addAttributeLore(AttributeSlotType slot, AttributeLoreType lore) {
@@ -111,6 +119,18 @@ public class ItemLoreBuilder {
                 tmp.add("§r"+var);
             }
         }
+
+        if(runes.size() > 0) {
+            for(Rune rune : runes) {
+                tmp.add("");
+
+                List<String> description = rune.getDescription();
+                for(String text : description) {
+                    tmp.add(text);
+                }
+            }
+        }
+
 
         //Items abilitie lore
         if(abilitie_lore.size() > 0) {

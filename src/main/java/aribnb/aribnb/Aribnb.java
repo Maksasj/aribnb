@@ -19,8 +19,8 @@ public final class Aribnb extends JavaPlugin {
         soulsystem = new SoulSystem(this);
         soulsystem.setScheduler();
 
-        itemmanager = new ItemManager();
         runemanager = new RuneManager();
+        itemmanager = new ItemManager();
     }
 
     @Override // Plugin shutdown logic
