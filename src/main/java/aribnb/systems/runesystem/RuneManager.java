@@ -1,5 +1,6 @@
 package aribnb.systems.runesystem;
 
+import aribnb.systems.runesystem.runes.CarlsonRune.CarlsonRune;
 import aribnb.systems.runesystem.runes.FadingTouchRune.FadingTouchRune;
 import aribnb.systems.runesystem.runes.ThunderRune.ThunderRune;
 import aribnb.systems.runesystem.runes.VampireRune.VampireRune;
@@ -13,6 +14,7 @@ public class RuneManager {
         runes.put("aribnb_runevampire", new VampireRune(1, 3));
         runes.put("aribnb_runethunder", new ThunderRune(1, 3));
         runes.put("aribnb_runefadingtouch", new FadingTouchRune(1, 3));
+        runes.put("aribnb_runecarlson", new CarlsonRune(1, 3));
     }
 
     public static Rune getRune(String id) {
