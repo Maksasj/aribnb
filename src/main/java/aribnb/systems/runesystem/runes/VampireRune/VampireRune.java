@@ -26,7 +26,6 @@ public class VampireRune extends Rune {
         lore.add("§r§9Vampire "+rom_lvl);
         lore.add("§r§7Gain §c+"+_lvl.toString()+"♥ §7health");
         lore.add("§r§7for each killed mob");
-
         return lore;
     }
 }

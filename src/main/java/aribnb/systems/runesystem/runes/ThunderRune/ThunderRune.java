@@ -25,7 +25,6 @@ public class ThunderRune extends Rune {
         lore.add("§r§7Have a §e"+_lvl.toString()+"%§7 chance");
         lore.add("§r§7to strike attacked");
         lore.add("§r§7entity with lightning");
-
         return lore;
     }
 }

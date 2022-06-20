@@ -141,7 +141,6 @@ public class ItemLoreBuilder {
 
         //Runes
         if(runes.size() > 0) {
-            System.out.println("RUNES: ");
             for(Rune rune : runes) {
                 tmp.add("");
 
