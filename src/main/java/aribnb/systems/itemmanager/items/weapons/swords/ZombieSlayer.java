@@ -36,7 +36,10 @@ public class ZombieSlayer extends Item {
         setAttackSpeed(meta, -2.5, EquipmentSlot.HAND);
 
         AribnbNbtFormater nbtFormater = new AribnbNbtFormater(meta);
-        nbtFormater.setIntField("aribnb_runevampire", 2);
+
+        //Test runes
+        //nbtFormater.setIntField("aribnb_runevampire", 14);
+        //nbtFormater.setIntField("aribnb_runethunder", 69);
         nbtFormater.setStrField("aribnb_sword", "aribnb_zombieslayer");
 
         //Lore builder

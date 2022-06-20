@@ -3,8 +3,13 @@ package aribnb.systems.runesystem;
 import java.util.List;
 
 public class Rune {
-    private static Integer lvl;
-    private static Integer max_lvl;
+    private Integer lvl;
+    private Integer max_lvl;
+
+    public Rune(Integer _lvl, Integer _max_lvl) {
+        lvl = _lvl;
+        max_lvl = _max_lvl;
+    }
 
     public Integer getLvl() {
         return lvl;
@@ -18,7 +23,7 @@ public class Rune {
         max_lvl = value;
     }
 
-    public List<String> getDescription() {
+    public List<String> getDescription(Integer lvl) {
         return null;
     }
 }

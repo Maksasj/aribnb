@@ -94,9 +94,9 @@ public class ItemLoreBuilder {
             Rune value = entry.getValue();
 
             if(nbtFormater.hasIntField(key)) {
+                value.setLvl(nbtFormater.getIntField(key));
                 addRuneLore(value);
             }
-
         }
     }
 
@@ -139,17 +139,18 @@ public class ItemLoreBuilder {
             }
         }
 
+        //Runes
         if(runes.size() > 0) {
+            System.out.println("RUNES: ");
             for(Rune rune : runes) {
                 tmp.add("");
 
-                List<String> description = rune.getDescription();
+                List<String> description = rune.getDescription(rune.getLvl());
                 for(String text : description) {
                     tmp.add(text);
                 }
             }
         }
-
 
         //Items abilitie lore
         if(abilitie_lore.size() > 0) {
