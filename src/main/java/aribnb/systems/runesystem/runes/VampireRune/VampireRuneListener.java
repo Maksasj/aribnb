@@ -1,6 +1,7 @@
 package aribnb.systems.runesystem.runes.VampireRune;
 
 import aribnb.utils.nbt_formater.AribnbNbtFormater;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -21,7 +22,12 @@ public class VampireRuneListener implements Listener {
             if(nbt.hasIntField("aribnb_runevampire")) {
                 int Vampire_level = nbt.getIntField("aribnb_runevampire");
                 double health = player.getHealth() + Vampire_level;
-                player.setHealth(health);
+
+                if(health < player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue()) {
+                    player.setHealth(health);
+                } else {
+                    player.setHealth(player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue());
+                }
             }
         }
     }
