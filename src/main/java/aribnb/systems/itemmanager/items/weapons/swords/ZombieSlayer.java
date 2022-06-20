@@ -5,6 +5,7 @@ import aribnb.systems.itemmanager.ItemManager;
 import aribnb.systems.itemmanager.items.resources.ZombieHeart.ZombieHeart;
 import aribnb.systems.runesystem.RuneManager;
 import aribnb.utils.itemlore_builder.*;
+import aribnb.utils.nbt_formater.AribnbNbtFormater;
 import com.google.common.collect.Multimap;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -23,33 +24,41 @@ import java.util.UUID;
 public class ZombieSlayer {
     public ItemStack zombieslayer;
 
-    public ZombieSlayer() {
-        ItemStack item = new ItemStack(Material.STONE_SWORD, 1);
+    public void setDamage(ItemMeta meta, Double value, EquipmentSlot slot) {
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "Melee attack damage",value, AttributeModifier.Operation.ADD_NUMBER, slot));
+    }
 
-        ItemMeta meta = item.getItemMeta();
+    public void setAttackSpeed(ItemMeta meta, Double value, EquipmentSlot slot) {
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "Melee attack speed",value, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
+    }
+
+    public ZombieSlayer() {
+        ItemStack zombieslayer = new ItemStack(Material.STONE_SWORD, 1);
+
+        ItemMeta meta = zombieslayer.getItemMeta();
         meta.setDisplayName("§r§9Zombie slayer");
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 
-        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "Melee attack damage",6.0, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
-        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "Melee attack damage",-2.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
+        setDamage(meta, 6.0, EquipmentSlot.HAND);
+        setAttackSpeed(meta, -2.5, EquipmentSlot.HAND);
+
+        AribnbNbtFormater nbtFormater = new AribnbNbtFormater(meta);
+        nbtFormater.setIntField("aribnb_runevampire", 2);
+        nbtFormater.setStrField("aribnb_sword", "aribnb_zombieslayer");
 
         //Lore builder
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
-        lorebuilder.setItemType("SWORD");
+        lorebuilder.setItemType("Sword");
         lorebuilder.setRarity(Rarities.RARE);
         lorebuilder.buildAttributeLoreFromMeta(meta);
-        lorebuilder.addRuneLore(RuneManager.getRune("aribnb_runevampire"));
+        lorebuilder.buildRuneFromMeta(meta);
         meta.setLore(lorebuilder.buildLore());
 
-        PersistentDataContainer data = meta.getPersistentDataContainer();
-        data.set(new NamespacedKey(Aribnb.getPlugin(), "aribnb_sword"), PersistentDataType.STRING, "aribnb_zombieslayer");
-        data.set(new NamespacedKey(Aribnb.getPlugin(), "aribnb_runevampire"), PersistentDataType.INTEGER, 2);
-        item.setItemMeta(meta);
-
-        zombieslayer = item;
+        zombieslayer.setItemMeta(meta);
 
         ItemStack zombieheart = ItemManager.getZombieHeart();
-        ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_zombieslayer_craft"), item);
+        ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_zombieslayer_craft"), zombieslayer);
         sr.shape(   " D ",
                     " Z ",
                     " S ");

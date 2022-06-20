@@ -15,6 +15,10 @@ public class AribnbNbtFormater {
         data = meta.getPersistentDataContainer();
     }
 
+    public AribnbNbtFormater(ItemMeta meta) {
+        data = meta.getPersistentDataContainer();
+    }
+
     public static PersistentDataContainer getData() {
         return data;
     }

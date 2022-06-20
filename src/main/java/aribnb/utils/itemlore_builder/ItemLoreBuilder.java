@@ -1,12 +1,16 @@
 package aribnb.utils.itemlore_builder;
 
 import aribnb.systems.runesystem.Rune;
+import aribnb.systems.runesystem.RuneManager;
+import aribnb.utils.nbt_formater.AribnbNbtFormater;
 import com.google.common.collect.Multimap;
 import org.bukkit.ChatColor;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +29,14 @@ public class ItemLoreBuilder {
     private static Rarities rarity;
     private static String itemtype;
     private static String reforge;
+
+    public ItemLoreBuilder() {
+        lore = new ArrayList<>();
+        custom_info = new ArrayList<>();
+        abilitie_lore = new ArrayList<>();
+        runes = new ArrayList<>();
+        attributeloretype= new HashMap<AttributeSlotType, List<AttributeLoreType>>();
+    };
 
     public void buildAttributeLoreFromMeta(ItemMeta meta) {
         Multimap<Attribute, AttributeModifier> map = meta.getAttributeModifiers();
@@ -46,14 +58,6 @@ public class ItemLoreBuilder {
         }
     }
 
-    public ItemLoreBuilder() {
-        lore = new ArrayList<>();
-        custom_info = new ArrayList<>();
-        abilitie_lore = new ArrayList<>();
-        runes = new ArrayList<>();
-        attributeloretype= new HashMap<AttributeSlotType, List<AttributeLoreType>>();
-    };
-
     public void setRarity(Rarities value) {
         rarity = value;
     }
@@ -61,6 +65,7 @@ public class ItemLoreBuilder {
     public void setReforge(String value) {
         reforge = value;
     }
+
     public void addLore(String text) {
         lore.add(text);
     }
@@ -79,6 +84,20 @@ public class ItemLoreBuilder {
 
     public void addRuneLore(Rune rune) {
         runes.add(rune);
+    }
+
+    public void buildRuneFromMeta(ItemMeta meta) {
+        AribnbNbtFormater nbtFormater = new AribnbNbtFormater(meta);
+
+        for (Map.Entry<String, Rune> entry : RuneManager.getRunes().entrySet()) {
+            String key = entry.getKey();
+            Rune value = entry.getValue();
+
+            if(nbtFormater.hasIntField(key)) {
+                addRuneLore(value);
+            }
+
+        }
     }
 
     public void addAttributeLore(AttributeSlotType slot, AttributeLoreType lore) {
