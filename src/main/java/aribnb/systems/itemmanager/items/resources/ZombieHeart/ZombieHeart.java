@@ -1,7 +1,7 @@
 package aribnb.systems.itemmanager.items.resources.ZombieHeart;
 
-import aribnb.aribnb.Aribnb;
 import aribnb.systems.itemmanager.Item;
+import aribnb.systems.itemmanager.ItemTypes;
 import aribnb.utils.itemlore_builder.ItemLoreBuilder;
 import aribnb.utils.itemlore_builder.Rarities;
 import aribnb.utils.nbt_formater.AribnbNbtFormater;
@@ -10,18 +10,13 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.persistence.PersistentDataContainer;
-import org.bukkit.persistence.PersistentDataType;
 
 public class ZombieHeart extends Item {
 
-    public ZombieHeart() {
-        super(Rarities.UNCOMMON);
-
-        item = new ItemStack(Material.ROTTEN_FLESH, 1);
+    public ZombieHeart(String id) {
+        super(ItemTypes.RESOURCE, Rarities.UNCOMMON, Material.ROTTEN_FLESH);
 
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("§r§aZombie heart");
@@ -39,10 +34,14 @@ public class ZombieHeart extends Item {
 
         item.setItemMeta(meta);
 
+        bindCraft();
+    }
+
+    private void bindCraft() {
         ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_zombieheart_craft"), item);
         sr.shape(   "RRR",
-                    "RSR",
-                    "RRR");
+                "RSR",
+                "RRR");
         sr.setIngredient('R', Material.ROTTEN_FLESH);
         sr.setIngredient('S', Material.SPIDER_EYE);
 

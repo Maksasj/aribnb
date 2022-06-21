@@ -3,6 +3,7 @@ package aribnb.systems.itemmanager.items.artifacts.EnderPouch;
 import aribnb.aribnb.Aribnb;
 import aribnb.systems.itemmanager.Item;
 
+import aribnb.systems.itemmanager.ItemTypes;
 import aribnb.utils.itemlore_builder.AbilitieLoreType;
 import aribnb.utils.itemlore_builder.ItemAbilitiesLore;
 import aribnb.utils.itemlore_builder.ItemLoreBuilder;
@@ -13,11 +14,8 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.persistence.PersistentDataContainer;
-import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +24,8 @@ import static org.bukkit.Bukkit.getServer;
 
 public class EnderPouch extends Item {
 
-    public EnderPouch() {
-        super(Rarities.RARE);
-        item = new ItemStack(Material.ENDER_EYE, 1);
+    public EnderPouch(String id) {
+        super(ItemTypes.ARTIFACT, Rarities.RARE, Material.ENDER_EYE);
 
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("§r§9Ender pouch");
@@ -51,15 +48,19 @@ public class EnderPouch extends Item {
 
         item.setItemMeta(meta);
 
+        bindCraft();
+        getServer().getPluginManager().registerEvents(new OpenEnderPouchListener(), Aribnb.getPlugin());
+    }
+
+    private void bindCraft() {
         ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_enderpouch_craft"), item);
         sr.shape(   "BCB",
-                    "BEB",
-                    "BBB");
+                "BEB",
+                "BBB");
         sr.setIngredient('E', Material.ENDER_EYE);
         sr.setIngredient('C', Material.ENDER_CHEST);
         sr.setIngredient('B', Material.BLACK_WOOL);
 
         Bukkit.getServer().addRecipe(sr);
-        getServer().getPluginManager().registerEvents(new OpenEnderPouchListener(), Aribnb.getPlugin());
     }
 }
