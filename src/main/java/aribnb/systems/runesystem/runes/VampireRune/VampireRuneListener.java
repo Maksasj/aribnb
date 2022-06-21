@@ -16,17 +16,19 @@ public class VampireRuneListener implements Listener {
     public void vampireRune(EntityDeathEvent event) {
         Entity dead_entity = event.getEntity();
 
-        Player player = (Player) event.getEntity().getKiller();
-        if(player != null) {
-            AribnbNbtFormater nbt = new AribnbNbtFormater(player.getInventory().getItemInMainHand());
-            if(nbt.hasIntField("aribnb_runevampire")) {
-                int Vampire_level = nbt.getIntField("aribnb_runevampire");
-                double health = player.getHealth() + Vampire_level;
+        if(event.getEntity().getKiller() instanceof Player) {
+            Player player = (Player) event.getEntity().getKiller();
+            if(player != null) {
+                AribnbNbtFormater nbt = new AribnbNbtFormater(player.getInventory().getItemInMainHand());
+                if(nbt.hasIntField("aribnb_runevampire")) {
+                    int Vampire_level = nbt.getIntField("aribnb_runevampire");
+                    double health = player.getHealth() + Vampire_level;
 
-                if(health < player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue()) {
-                    player.setHealth(health);
-                } else {
-                    player.setHealth(player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue());
+                    if(health < player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue()) {
+                        player.setHealth(health);
+                    } else {
+                        player.setHealth(player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue());
+                    }
                 }
             }
         }

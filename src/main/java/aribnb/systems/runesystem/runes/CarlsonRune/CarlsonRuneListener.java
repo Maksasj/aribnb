@@ -17,19 +17,20 @@ public class CarlsonRuneListener implements Listener {
 
     @EventHandler
     public void carlsonRune(EntityDamageByEntityEvent event) {
-        Player player = (Player) event.getDamager();
+        if(event.getDamager() instanceof Player) {
+            Player player = (Player) event.getDamager();
+            if (player != null) {
+                AribnbNbtFormater nbt = new AribnbNbtFormater(player.getInventory().getItemInMainHand());
+                if (nbt.hasIntField("aribnb_runecarlson")) {
+                    Integer lvl = nbt.getIntField("aribnb_runecarlson");
 
-        if(player != null) {
-            AribnbNbtFormater nbt = new AribnbNbtFormater(player.getInventory().getItemInMainHand());
-            if(nbt.hasIntField("aribnb_runecarlson")) {
-                Integer lvl = nbt.getIntField("aribnb_runecarlson");
+                    Random rand = new Random(); //instance of random class
+                    Double random = rand.nextDouble(100);
 
-                Random rand = new Random(); //instance of random class
-                Double random = rand.nextDouble(100);
-
-                if(random <= 100) {
-                    LivingEntity livingEntity = (LivingEntity) event.getEntity();
-                    livingEntity.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, lvl*20*2, 1));
+                    if (random <= 100) {
+                        LivingEntity livingEntity = (LivingEntity) event.getEntity();
+                        livingEntity.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, lvl * 20 * 2, 1));
+                    }
                 }
             }
         }

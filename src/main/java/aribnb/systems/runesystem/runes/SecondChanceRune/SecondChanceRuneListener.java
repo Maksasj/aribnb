@@ -20,7 +20,6 @@ public class SecondChanceRuneListener implements Listener {
                 int damage = ((Damageable) player.getInventory().getItemInMainHand().getItemMeta()).getDamage();
                 int max_damage = player.getInventory().getItemInMainHand().getType().getMaxDurability();
 
-                System.out.println(damage);
                 if(damage <= max_damage - 1) {
                     event.setCancelled(true);
 

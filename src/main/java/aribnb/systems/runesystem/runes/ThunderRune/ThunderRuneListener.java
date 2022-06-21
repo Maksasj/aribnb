@@ -13,19 +13,20 @@ public class ThunderRuneListener implements Listener {
 
     @EventHandler
     public void thunderRune(EntityDamageByEntityEvent event) {
-        Player player = (Player) event.getDamager();
+        if(event.getDamager() instanceof Player) {
+            Player player = (Player) event.getDamager();
+            if(player != null) {
+                AribnbNbtFormater nbt = new AribnbNbtFormater(player.getInventory().getItemInMainHand());
+                if(nbt.hasIntField("aribnb_runethunder")) {
+                    Integer lvl = nbt.getIntField("aribnb_runethunder");
 
-        if(player != null) {
-            AribnbNbtFormater nbt = new AribnbNbtFormater(player.getInventory().getItemInMainHand());
-            if(nbt.hasIntField("aribnb_runethunder")) {
-                Integer lvl = nbt.getIntField("aribnb_runethunder");
+                    Random rand = new Random(); //instance of random class
+                    int upperbound = 100;
+                    Double random = rand.nextDouble(upperbound);
 
-                Random rand = new Random(); //instance of random class
-                int upperbound = 100;
-                Double random = rand.nextDouble(upperbound);
-
-                if(random <= lvl*3) {
-                    player.getWorld().strikeLightningEffect(event.getEntity().getLocation());
+                    if(random <= lvl*3) {
+                        player.getWorld().strikeLightningEffect(event.getEntity().getLocation());
+                    }
                 }
             }
         }

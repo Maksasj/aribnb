@@ -17,12 +17,14 @@ public class SpeedsterRuneListener implements Listener {
     public void speedsterRune(EntityDeathEvent event) {
         Entity dead_entity = event.getEntity();
 
-        Player player = (Player) event.getEntity().getKiller();
-        if(player != null) {
-            AribnbNbtFormater nbt = new AribnbNbtFormater(player.getInventory().getItemInMainHand());
-            if(nbt.hasIntField("aribnb_runespeedster")) {
-                Integer lvl = nbt.getIntField("aribnb_runespeedster");
-                player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, lvl*20*4, 0));
+        if(event.getEntity().getKiller() instanceof Player) {
+            Player player = (Player) event.getEntity().getKiller();
+            if (player != null) {
+                AribnbNbtFormater nbt = new AribnbNbtFormater(player.getInventory().getItemInMainHand());
+                if (nbt.hasIntField("aribnb_runespeedster")) {
+                    Integer lvl = nbt.getIntField("aribnb_runespeedster");
+                    player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, lvl * 20 * 4, 0));
+                }
             }
         }
     }

@@ -17,19 +17,20 @@ public class FadingTouchRuneListener implements Listener {
 
     @EventHandler
     public void fadingtouchRune(EntityDamageByEntityEvent event) {
-        Player player = (Player) event.getDamager();
+        if(event.getDamager() instanceof Player) {
+            Player player = (Player) event.getDamager();
+            if (player != null) {
+                AribnbNbtFormater nbt = new AribnbNbtFormater(player.getInventory().getItemInMainHand());
+                if (nbt.hasIntField("aribnb_runefadingtouch")) {
+                    Integer lvl = nbt.getIntField("aribnb_runefadingtouch");
 
-        if(player != null) {
-            AribnbNbtFormater nbt = new AribnbNbtFormater(player.getInventory().getItemInMainHand());
-            if(nbt.hasIntField("aribnb_runefadingtouch")) {
-                Integer lvl = nbt.getIntField("aribnb_runefadingtouch");
+                    Random rand = new Random(); //instance of random class
+                    Double random = rand.nextDouble(100);
 
-                Random rand = new Random(); //instance of random class
-                Double random = rand.nextDouble(100);
-
-                if(random <= 10) {
-                    LivingEntity livingEntity = (LivingEntity) event.getEntity();
-                    livingEntity.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 60, lvl));
+                    if (random <= 10) {
+                        LivingEntity livingEntity = (LivingEntity) event.getEntity();
+                        livingEntity.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 60, lvl));
+                    }
                 }
             }
         }
