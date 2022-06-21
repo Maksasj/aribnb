@@ -25,7 +25,7 @@ public class SpeedsterRune extends Rune {
         lore.add("§r§9Speedster "+rom_lvl);
         lore.add("§r§7After killing mob, you gain");
         lore.add("§r§7Speed I effect ");
-        lore.add("for §e"+(_lvl*4)+"§7 seconds");
+        lore.add("§r§7for §e"+(_lvl*4)+"§7 seconds");
         return lore;
     }
 }

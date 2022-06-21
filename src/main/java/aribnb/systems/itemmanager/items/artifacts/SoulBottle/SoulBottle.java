@@ -34,6 +34,7 @@ import static org.bukkit.Bukkit.getServer;
 public class SoulBottle extends Item {
 
     public SoulBottle() {
+        super(Rarities.EPIC);
         item = new ItemStack(Material.POTION, 1);
 
         ItemMeta meta = item.getItemMeta();

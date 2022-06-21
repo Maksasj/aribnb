@@ -19,6 +19,8 @@ import org.bukkit.persistence.PersistentDataType;
 public class ZombieHeart extends Item {
 
     public ZombieHeart() {
+        super(Rarities.UNCOMMON);
+
         item = new ItemStack(Material.ROTTEN_FLESH, 1);
 
         ItemMeta meta = item.getItemMeta();

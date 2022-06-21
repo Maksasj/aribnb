@@ -27,6 +27,7 @@ import static org.bukkit.Bukkit.getServer;
 public class EnderPouch extends Item {
 
     public EnderPouch() {
+        super(Rarities.RARE);
         item = new ItemStack(Material.ENDER_EYE, 1);
 
         ItemMeta meta = item.getItemMeta();

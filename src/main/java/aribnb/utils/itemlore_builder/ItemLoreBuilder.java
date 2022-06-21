@@ -7,8 +7,10 @@ import com.google.common.collect.Multimap;
 import org.bukkit.ChatColor;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 
@@ -25,6 +27,8 @@ public class ItemLoreBuilder {
     //Using hashmap for grouping purpose
     private static HashMap<AttributeSlotType, List<AttributeLoreType>> attributeloretype;
 
+    private static List<String> enchantments;
+
     private static List<Rune> runes;
     private static Rarities rarity;
     private static String itemtype;
@@ -35,6 +39,7 @@ public class ItemLoreBuilder {
         custom_info = new ArrayList<>();
         abilitie_lore = new ArrayList<>();
         runes = new ArrayList<>();
+        enchantments = new ArrayList<>();
         attributeloretype= new HashMap<AttributeSlotType, List<AttributeLoreType>>();
     };
 
@@ -70,6 +75,15 @@ public class ItemLoreBuilder {
         lore.add(text);
     }
 
+    public void setEnchantments(ItemMeta meta) {
+        Map<Enchantment, Integer> enchants = meta.getEnchants();
+        for (Map.Entry<Enchantment, Integer> entry : enchants.entrySet()) {
+            Enchantment key = entry.getKey();
+            Integer value = entry.getValue();
+
+            enchantments.add(EnchantLore.toString(key, value));
+        }
+    }
     public void setItemType(String value) {
         itemtype = value;
     }
@@ -100,6 +114,17 @@ public class ItemLoreBuilder {
         }
     }
 
+    public void autoBuild(Rarities rar, ItemMeta meta) {
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+
+        setItemType("Sword");
+        setRarity(rar);
+        buildAttributeLoreFromMeta(meta);
+        buildRuneFromMeta(meta);
+        setEnchantments(meta);
+    }
+
     public void addAttributeLore(AttributeSlotType slot, AttributeLoreType lore) {
         if(attributeloretype.containsKey(slot)) {
             attributeloretype.get(slot).add(lore);
@@ -128,6 +153,14 @@ public class ItemLoreBuilder {
             tmp.add("");
             for (String var : custom_info) {
                 tmp.add("§r"+var);
+            }
+        }
+
+        //Enchantments lore
+        if(enchantments.size() > 0) {
+            tmp.add("");
+            for (String var : enchantments) {
+                tmp.add("§r§9"+var);
             }
         }
 
