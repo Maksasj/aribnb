@@ -1,4 +1,4 @@
-package aribnb.systems.runesystem.runes.SecondChance;
+package aribnb.systems.runesystem.runes.SpeedsterRune;
 
 import aribnb.aribnb.Aribnb;
 import aribnb.systems.runesystem.Rune;
@@ -9,12 +9,12 @@ import java.util.List;
 
 import static org.bukkit.Bukkit.getServer;
 
-public class SecondChanceRune extends Rune {
+public class SpeedsterRune extends Rune {
 
-    public SecondChanceRune(Integer _lvl, Integer _max_lvl) {
+    public SpeedsterRune(Integer _lvl, Integer _max_lvl) {
         super(_lvl, _max_lvl);
 
-        getServer().getPluginManager().registerEvents(new SecondChanceRuneListener(), Aribnb.getPlugin());
+        getServer().getPluginManager().registerEvents(new SpeedsterRuneListener(), Aribnb.getPlugin());
     }
 
     @Override
@@ -22,9 +22,10 @@ public class SecondChanceRune extends Rune {
         String rom_lvl = new RomanNumerals().intToRoman(_lvl);
 
         List<String> lore = new ArrayList<>();
-        lore.add("§r§9Second chance "+rom_lvl);
-        lore.add("§r§7Works like soulbound");
-        lore.add("§r§7but for items");
+        lore.add("§r§9Speedster "+rom_lvl);
+        lore.add("§r§7After killing mob, you gain");
+        lore.add("§r§7Speed I effect ");
+        lore.add("for §e"+(_lvl*4)+"§7 seconds");
         return lore;
     }
 }

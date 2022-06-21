@@ -43,6 +43,7 @@ public class ZombieSlayer extends Item {
         //nbtFormater.setIntField("aribnb_runefadingtouch", 15);
         //nbtFormater.setIntField("aribnb_runecarlson", 45);
         //nbtFormater.setIntField("aribnb_runesecondchance", 1);
+        nbtFormater.setIntField("aribnb_runespeedster", 1);
         nbtFormater.setStrField("aribnb_sword", "aribnb_zombieslayer");
 
         //Lore builder

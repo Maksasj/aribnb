@@ -1,4 +1,4 @@
-package aribnb.systems.runesystem.runes.SecondChance;
+package aribnb.systems.runesystem.runes.SecondChanceRune;
 
 import aribnb.utils.nbt_formater.AribnbNbtFormater;
 import org.bukkit.entity.Player;
