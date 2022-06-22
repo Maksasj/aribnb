@@ -31,7 +31,7 @@ public class EnderPouch extends Item {
         ab_lore.add("Open your ender chest");
         ab_lore.add("everywhere you want");
         lorebuilder.addItemAbilitieLore(new ItemAbilitiesLore(ab_lore, AbilitieLoreType.RIGHT_CLICK));
-        lorebuilder.autoBuild(getRarity(), getMeta());
+        lorebuilder.autoBuild(getRarity(), getMeta(), getType());
         getMeta().setLore(lorebuilder.buildLore());
 
         bindTags(id);

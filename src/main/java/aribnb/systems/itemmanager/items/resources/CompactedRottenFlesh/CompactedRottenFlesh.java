@@ -17,7 +17,7 @@ public class CompactedRottenFlesh extends Item {
         setName("Compacted Rotten Flesh");
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
-        lorebuilder.autoBuild(getRarity(), getMeta());
+        lorebuilder.autoBuild(getRarity(), getMeta(), getType());
         getMeta().setLore(lorebuilder.buildLore());
 
         bindTags(id);

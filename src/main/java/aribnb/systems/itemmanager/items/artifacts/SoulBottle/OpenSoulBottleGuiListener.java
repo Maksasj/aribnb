@@ -68,7 +68,6 @@ public class OpenSoulBottleGuiListener implements Listener {
                                 ab_lore.add("Store and accumulate");
                                 ab_lore.add("gained souls");
 
-                                lorebuilder.setItemType("ARTIFACT");
                                 lorebuilder.addCustomInfo("§bSouls stored: " + updated_bottle_souls + "/" + bottle_max_souls);
                                 lorebuilder.setRarity(Rarities.EPIC);
 
@@ -117,7 +116,6 @@ public class OpenSoulBottleGuiListener implements Listener {
                                 ab_lore.add("Store and accumulate");
                                 ab_lore.add("gained souls");
 
-                                lorebuilder.setItemType("ARTIFACT");
                                 lorebuilder.addCustomInfo("§bSouls stored: " + bottle_souls + "/" + bottle_max_souls);
                                 lorebuilder.setRarity(Rarities.EPIC);
 

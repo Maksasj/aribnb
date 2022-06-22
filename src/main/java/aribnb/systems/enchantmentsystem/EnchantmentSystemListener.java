@@ -1,7 +1,9 @@
 package aribnb.systems.enchantmentsystem;
 
+import aribnb.systems.itemmanager.ItemTypes;
 import aribnb.utils.itemlore_builder.ItemLoreBuilder;
 import aribnb.utils.itemlore_builder.Rarities;
+import aribnb.utils.nbt_formater.AribnbNbtFormater;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.event.EventHandler;
@@ -24,9 +26,17 @@ public class EnchantmentSystemListener implements Listener {
         ItemStack item = event.getItem();
         item.addUnsafeEnchantments(event.getEnchantsToAdd());
 
+        AribnbNbtFormater nbtformater = new AribnbNbtFormater(item);
+
         ItemMeta meta = item.getItemMeta();
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
-        lorebuilder.autoBuild(Rarities.RARE, meta);
+
+        if(nbtformater.hasStringField("aribnb_types")) {
+            lorebuilder.autoBuild(Rarities.RARE, meta, ItemTypes.getFromString(nbtformater.getStringField("aribnb_types")));
+        } else {
+            lorebuilder.autoBuild(Rarities.RARE, meta, ItemTypes.NONE);
+        }
+
         System.out.println("TODO");
         meta.setLore(lorebuilder.buildLore());
 

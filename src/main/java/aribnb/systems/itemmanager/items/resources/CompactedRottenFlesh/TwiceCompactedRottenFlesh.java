@@ -20,7 +20,7 @@ public class TwiceCompactedRottenFlesh extends Item {
         setName("Twice Compacted Rotten Flesh");
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
-        lorebuilder.autoBuild(getRarity(), getMeta());
+        lorebuilder.autoBuild(getRarity(), getMeta(), getType());
         getMeta().setLore(lorebuilder.buildLore());
 
         bindTags(id);

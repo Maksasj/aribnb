@@ -40,7 +40,7 @@ public class SoulBottle extends Item {
         ab_lore.add("Store and accumulate");
         ab_lore.add("gained souls");
         lorebuilder.addItemAbilitieLore(new ItemAbilitiesLore(ab_lore, AbilitieLoreType.CLICK));
-        lorebuilder.autoBuild(getRarity(), getMeta());
+        lorebuilder.autoBuild(getRarity(), getMeta(), getType());
         getMeta().setLore(lorebuilder.buildLore());
 
         ((PotionMeta) getMeta()).setBasePotionData(new PotionData(PotionType.WATER));

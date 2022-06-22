@@ -1,5 +1,6 @@
 package aribnb.utils.itemlore_builder;
 
+import aribnb.systems.itemmanager.ItemTypes;
 import aribnb.systems.runesystem.Rune;
 import aribnb.systems.runesystem.RuneManager;
 import aribnb.utils.nbt_formater.AribnbNbtFormater;
@@ -31,7 +32,7 @@ public class ItemLoreBuilder {
 
     private static List<Rune> runes;
     private static Rarities rarity;
-    private static String itemtype;
+    private static ItemTypes itemtype;
     private static String reforge;
 
     public ItemLoreBuilder() {
@@ -89,7 +90,7 @@ public class ItemLoreBuilder {
             enchantments.add(EnchantLore.toString(key, value));
         }
     }
-    public void setItemType(String value) {
+    public void setItemType(ItemTypes value) {
         itemtype = value;
     }
 
@@ -119,9 +120,10 @@ public class ItemLoreBuilder {
         }
     }
 
-    public void autoBuild(Rarities rar, ItemMeta meta) {
-        setItemType("Sword");
+    public void autoBuild(Rarities rar, ItemMeta meta, ItemTypes type) {
         setRarity(rar);
+        setItemType(type);
+
         buildAttributeLoreFromMeta(meta);
         buildRuneFromMeta(meta);
         setEnchantments(meta);
@@ -144,8 +146,12 @@ public class ItemLoreBuilder {
         tmp.add("§r§7Rarity: "+rarity.toString());
 
         //Reforge
-        if(reforge == null) {
-            tmp.add("§r§7Reforge: §fNone");
+        if(reforge == null) { //Todo
+            if(itemtype != ItemTypes.RESOURCE) {
+                tmp.add("§r§7Reforge: §fNone");
+            } else {
+                tmp.add("§r§7Type: §fResource");
+            }
         } else {
             tmp.add("§r§7Reforge: "+reforge);
         }

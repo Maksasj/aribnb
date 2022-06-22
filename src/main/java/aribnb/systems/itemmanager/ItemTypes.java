@@ -3,7 +3,8 @@ package aribnb.systems.itemmanager;
 public enum ItemTypes {
     ARTIFACT("aribnb_artifact"),
     RESOURCE("aribnb_resource"),
-    SWORD("aribnb_sword");
+    SWORD("aribnb_sword"),
+    NONE("aribnb_nonetype");
 
     private final String text;
 
@@ -14,5 +15,17 @@ public enum ItemTypes {
     @Override
     public String toString() {
         return text;
+    }
+
+    public static ItemTypes getFromString(String text) {
+        if(text == "aribnb_sword") {
+            return SWORD;
+        } else if(text == "aribnb_resource") {
+            return RESOURCE;
+        } else if(text == "aribnb_artifact") {
+            return ARTIFACT;
+        }
+
+        return NONE;
     }
 }

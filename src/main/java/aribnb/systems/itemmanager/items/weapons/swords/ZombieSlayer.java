@@ -19,7 +19,7 @@ public class ZombieSlayer extends Item {
         setAttackSpeed(-2.5, EquipmentSlot.HAND);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
-        lorebuilder.autoBuild(getRarity(), getMeta());
+        lorebuilder.autoBuild(getRarity(), getMeta(), getType());
         getMeta().setLore(lorebuilder.buildLore());
 
         bindTags(id);
