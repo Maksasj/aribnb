@@ -2,6 +2,9 @@ package aribnb.systems.itemmanager;
 
 import aribnb.utils.itemlore_builder.Rarities;
 import aribnb.utils.nbt_formater.AribnbNbtFormater;
+import com.mojang.authlib.GameProfile;
+import com.mojang.authlib.properties.Property;
+import jdk.internal.logger.BootstrapLogger;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -10,7 +13,10 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.UUID;
 
 public class Item {
@@ -143,5 +149,20 @@ public class Item {
     public void addGlittering() {
         this.getMeta().addEnchant(Enchantment.LUCK, 1, false);
     }
+
+    public void setSkinViaBase64(SkullMeta meta, String base64) {
+        try {
+            Method setProfile = meta.getClass().getDeclaredMethod("setProfile", GameProfile.class);
+            setProfile.setAccessible(true);
+
+            GameProfile profile = new GameProfile(UUID.randomUUID(), "skull-texture");
+            profile.getProperties().put("textures", new Property("textures", base64));
+
+            setProfile.invoke(meta, profile);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            System.out.println("There was a severe internal reflection error when attempting to set the skin of a player skull via base64!");
+        }
+    }
+
     private void bindCraft() {};
 }

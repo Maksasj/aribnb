@@ -81,6 +81,10 @@ public class ItemLoreBuilder {
         lore.add(text);
     }
 
+    public void setLore(List<String> text) {
+        lore = text;
+    }
+
     public void setEnchantments(ItemMeta meta) {
         Map<Enchantment, Integer> enchants = meta.getEnchants();
         for (Map.Entry<Enchantment, Integer> entry : enchants.entrySet()) {
@@ -176,7 +180,7 @@ public class ItemLoreBuilder {
         if(lore.size() > 0) {
             tmp.add("");
             for (String var : lore) {
-                tmp.add("§r"+var);
+                tmp.add("§r§7"+var);
             }
         }
 

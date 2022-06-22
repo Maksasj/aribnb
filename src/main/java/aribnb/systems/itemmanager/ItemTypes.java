@@ -3,6 +3,7 @@ package aribnb.systems.itemmanager;
 public enum ItemTypes {
     ARTIFACT("aribnb_artifact"),
     RESOURCE("aribnb_resource"),
+    HELMET("aribnb_helmet"),
     SWORD("aribnb_sword"),
     NONE("aribnb_nonetype");
 
@@ -24,6 +25,8 @@ public enum ItemTypes {
             return RESOURCE;
         } else if(text == "aribnb_artifact") {
             return ARTIFACT;
+        } else if(text == "aribnb_helmet") {
+            return HELMET;
         }
 
         return NONE;

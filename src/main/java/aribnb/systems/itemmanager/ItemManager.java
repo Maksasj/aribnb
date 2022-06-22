@@ -1,5 +1,6 @@
 package aribnb.systems.itemmanager;
 
+import aribnb.systems.itemmanager.items.armor.unique_pieces.BlazeSkull.BlazeSkull;
 import aribnb.systems.itemmanager.items.artifacts.EnderPouch.EnderPouch;
 import aribnb.systems.itemmanager.items.artifacts.SoulBottle.SoulBottle;
 import aribnb.systems.itemmanager.items.resources.CompactedRottenFlesh.CompactedRottenFlesh;
@@ -16,13 +17,17 @@ public class ItemManager {
 
     public ItemManager() {
         items = new HashMap<String, Item>();
-        items.put("aribnb_soulbottle", new SoulBottle("aribnb_soulbottle"));
-        items.put("aribnb_enderpouch", new EnderPouch("aribnb_enderpouch"));
+
+        //Resources
         items.put("aribnb_compactedrottenflesh", new CompactedRottenFlesh("aribnb_compactedrottenflesh"));
         items.put("aribnb_twicecompactedrottenflesh", new TwiceCompactedRottenFlesh("aribnb_twicecompactedrottenflesh"));
         items.put("aribnb_thricecompactedrottenflesh", new ThriceCompactedRottenFlesh("aribnb_thricecompactedrottenflesh"));
         items.put("aribnb_fourfoldcompactedrottenflesh", new FourfoldCompactedRottenFlesh("aribnb_fourfoldcompactedrottenflesh"));
+
+        items.put("aribnb_soulbottle", new SoulBottle("aribnb_soulbottle"));
+        items.put("aribnb_enderpouch", new EnderPouch("aribnb_enderpouch"));
         items.put("aribnb_zombieslayer", new ZombieSlayer("aribnb_zombieslayer"));
+        items.put("aribnb_blazeskull", new BlazeSkull("aribnb_blazeskull"));
     }
 
     public static ItemStack getItem(String id) {
