@@ -3,6 +3,10 @@ package aribnb.systems.itemmanager;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.BlazeSkull.BlazeSkull;
 import aribnb.systems.itemmanager.items.artifacts.EnderPouch.EnderPouch;
 import aribnb.systems.itemmanager.items.artifacts.SoulBottle.SoulBottle;
+import aribnb.systems.itemmanager.items.resources.CompactedBone.CompactedBone;
+import aribnb.systems.itemmanager.items.resources.CompactedBone.FourfoldCompactedBone;
+import aribnb.systems.itemmanager.items.resources.CompactedBone.ThriceCompactedBone;
+import aribnb.systems.itemmanager.items.resources.CompactedBone.TwiceCompactedBone;
 import aribnb.systems.itemmanager.items.resources.CompactedEnderPearl.CompactedEnderPearl;
 import aribnb.systems.itemmanager.items.resources.CompactedEnderPearl.FourfoldCompactedEnderPearl;
 import aribnb.systems.itemmanager.items.resources.CompactedEnderPearl.ThriceCompactedEnderPearl;
@@ -50,6 +54,11 @@ public class ItemManager {
         items.put("aribnb_twicecompactedenderpearl", new TwiceCompactedEnderPearl("aribnb_twicecompactedenderpearl"));
         items.put("aribnb_thricecompactedenderpearl", new ThriceCompactedEnderPearl("aribnb_thricecompactedenderpearl"));
         items.put("aribnb_fourfoldcompactedenderpearl", new FourfoldCompactedEnderPearl("aribnb_fourfoldcompactedenderpearl"));
+
+        items.put("aribnb_compactedbone", new CompactedBone("aribnb_compactedbone"));
+        items.put("aribnb_twicecompactedbone", new TwiceCompactedBone("aribnb_twicecompactedbone"));
+        items.put("aribnb_thricecompactedbone", new ThriceCompactedBone("aribnb_thricecompactedbone"));
+        items.put("aribnb_fourfoldcompactedbone", new FourfoldCompactedBone("aribnb_fourfoldcompactedbone"));
 
         items.put("aribnb_soulbottle", new SoulBottle("aribnb_soulbottle"));
         items.put("aribnb_enderpouch", new EnderPouch("aribnb_enderpouch"));
