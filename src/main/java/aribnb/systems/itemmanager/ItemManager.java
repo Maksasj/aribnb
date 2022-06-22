@@ -3,6 +3,9 @@ package aribnb.systems.itemmanager;
 import aribnb.systems.itemmanager.items.artifacts.EnderPouch.EnderPouch;
 import aribnb.systems.itemmanager.items.artifacts.SoulBottle.SoulBottle;
 import aribnb.systems.itemmanager.items.resources.CompactedRottenFlesh.CompactedRottenFlesh;
+import aribnb.systems.itemmanager.items.resources.CompactedRottenFlesh.FourfoldCompactedRottenFlesh;
+import aribnb.systems.itemmanager.items.resources.CompactedRottenFlesh.ThriceCompactedRottenFlesh;
+import aribnb.systems.itemmanager.items.resources.CompactedRottenFlesh.TwiceCompactedRottenFlesh;
 import aribnb.systems.itemmanager.items.weapons.swords.ZombieSlayer;
 import org.bukkit.inventory.ItemStack;
 
@@ -16,6 +19,9 @@ public class ItemManager {
         items.put("aribnb_soulbottle", new SoulBottle("aribnb_soulbottle"));
         items.put("aribnb_enderpouch", new EnderPouch("aribnb_enderpouch"));
         items.put("aribnb_compactedrottenflesh", new CompactedRottenFlesh("aribnb_compactedrottenflesh"));
+        items.put("aribnb_twicecompactedrottenflesh", new TwiceCompactedRottenFlesh("aribnb_twicecompactedrottenflesh"));
+        items.put("aribnb_thricecompactedrottenflesh", new ThriceCompactedRottenFlesh("aribnb_thricecompactedrottenflesh"));
+        items.put("aribnb_fourfoldcompactedrottenflesh", new FourfoldCompactedRottenFlesh("aribnb_fourfoldcompactedrottenflesh"));
         items.put("aribnb_zombieslayer", new ZombieSlayer("aribnb_zombieslayer"));
     }
 

@@ -28,13 +28,13 @@ public class ZombieSlayer extends Item {
     }
 
     private void bindCraft() {
-        ItemStack zombieheart = ItemManager.getItem("aribnb_compactedrottenflesh");
+        ItemStack tmp_item = ItemManager.getItem("aribnb_compactedrottenflesh");
         ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_zombieslayer_craft"), item);
         sr.shape(   " D ",
                     " Z ",
                     " S ");
         sr.setIngredient('D', Material.DIAMOND);
-        sr.setIngredient('Z', new RecipeChoice.ExactChoice(zombieheart));
+        sr.setIngredient('Z', new RecipeChoice.ExactChoice(tmp_item));
         sr.setIngredient('S', Material.STICK);
 
         Bukkit.getServer().addRecipe(sr);
