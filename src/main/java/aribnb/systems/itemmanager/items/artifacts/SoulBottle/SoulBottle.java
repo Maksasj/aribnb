@@ -30,36 +30,28 @@ public class SoulBottle extends Item {
     public SoulBottle(String id) {
         super(ItemTypes.ARTIFACT, Rarities.EPIC, Material.POTION);
 
-        ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("§r§5Soul bottle");
-        meta.addEnchant(Enchantment.LUCK, 1, false);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
-
-        PotionMeta pmeta = (PotionMeta) meta;
-        PotionData pdata = new PotionData(PotionType.WATER);
+        setName("Soul Bottle");
+        addGlittering(); //Todo
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
+        lorebuilder.addCustomInfo("§bSouls stored: 0.0/100.0");
+
         List<String> ab_lore = new ArrayList<>();;
         ab_lore.add("Store and accumulate");
         ab_lore.add("gained souls");
-
-        lorebuilder.setItemType("ARTIFACT");
-        lorebuilder.addCustomInfo("§bSouls stored: 0.0/100.0");
-        lorebuilder.setRarity(Rarities.EPIC);
         lorebuilder.addItemAbilitieLore(new ItemAbilitiesLore(ab_lore, AbilitieLoreType.CLICK));
+        lorebuilder.autoBuild(getRarity(), getMeta());
+        getMeta().setLore(lorebuilder.buildLore());
 
-        pmeta.setBasePotionData(pdata);
-        pmeta.setLore(lorebuilder.buildLore());
+        ((PotionMeta) getMeta()).setBasePotionData(new PotionData(PotionType.WATER));
+        getMeta().setLore(lorebuilder.buildLore());
 
-        AribnbNbtFormater nbtFormater = new AribnbNbtFormater(meta);
-        nbtFormater.setStrField("aribnb_artifact", "aribnb_soulbottle");
+        AribnbNbtFormater nbtFormater = new AribnbNbtFormater(getMeta());
         nbtFormater.setDoubleField("aribnb_soulbottle_capacity", 0.0);
         nbtFormater.setDoubleField("aribnb_soulbottle_max_capacity", 100.0);
 
-        item.setItemMeta(meta);
-
-
+        bindTags(id);
+        item.setItemMeta(getMeta());
         bindCraft();
 
         getServer().getPluginManager().registerEvents(new OpenSoulBottleListener(), Aribnb.getPlugin());
@@ -69,8 +61,8 @@ public class SoulBottle extends Item {
     private void bindCraft() {
         ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_soulbottle_craft"), item);
         sr.shape(   " B ",
-                "XNX",
-                "XXX");
+                    "XNX",
+                    "XXX");
         sr.setIngredient('X', Material.EXPERIENCE_BOTTLE);
         sr.setIngredient('N', Material.NETHER_STAR);
         sr.setIngredient('B', Material.CRYING_OBSIDIAN);

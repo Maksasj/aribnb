@@ -45,20 +45,25 @@ public class ItemLoreBuilder {
 
     public void buildAttributeLoreFromMeta(ItemMeta meta) {
         Multimap<Attribute, AttributeModifier> map = meta.getAttributeModifiers();
+        if(map == null) {
+            return;
+        }
 
-        for (Map.Entry entry : map.entries()) {
-            Attribute key = (Attribute) entry.getKey();
-            AttributeModifier value = (AttributeModifier) entry.getValue();
+        if(map.size() > 0) {
+            for (Map.Entry entry : map.entries()) {
+                Attribute key = (Attribute) entry.getKey();
+                AttributeModifier value = (AttributeModifier) entry.getValue();
 
-            AttributeSlotType slot = AttributeSlotType.getFromGeneric(value.getSlot());
-            AttributeLoreType atloretype = new AttributeLoreType(value.getAmount(), AttributeType.getFromGeneric(key));
+                AttributeSlotType slot = AttributeSlotType.getFromGeneric(value.getSlot());
+                AttributeLoreType atloretype = new AttributeLoreType(value.getAmount(), AttributeType.getFromGeneric(key));
 
-            if(attributeloretype.containsKey(slot)) {
-                attributeloretype.get(slot).add(atloretype);
-            } else {
-                List<AttributeLoreType> attribute_list = new ArrayList<>();
-                attribute_list.add(atloretype);
-                attributeloretype.put(slot, attribute_list);
+                if(attributeloretype.containsKey(slot)) {
+                    attributeloretype.get(slot).add(atloretype);
+                } else {
+                    List<AttributeLoreType> attribute_list = new ArrayList<>();
+                    attribute_list.add(atloretype);
+                    attributeloretype.put(slot, attribute_list);
+                }
             }
         }
     }
@@ -115,9 +120,6 @@ public class ItemLoreBuilder {
     }
 
     public void autoBuild(Rarities rar, ItemMeta meta) {
-        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-
         setItemType("Sword");
         setRarity(rar);
         buildAttributeLoreFromMeta(meta);

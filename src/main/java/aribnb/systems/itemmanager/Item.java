@@ -1,11 +1,13 @@
 package aribnb.systems.itemmanager;
 
-import aribnb.utils.itemlore_builder.RaritieColors;
 import aribnb.utils.itemlore_builder.Rarities;
+import aribnb.utils.nbt_formater.AribnbNbtFormater;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -24,6 +26,9 @@ public class Item {
         this.meta = this.item.getItemMeta();
         this.rarity = _rarity;
         this.type = _type;
+
+        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
     public Rarities getRarity() {
@@ -129,5 +134,14 @@ public class Item {
         this.getMeta().addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "Attack speed",value, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
     }
 
+    public void bindTags(String id) {
+        AribnbNbtFormater nbtFormater = new AribnbNbtFormater(getMeta());
+        nbtFormater.setStrField("aribnb_type", type.toString());
+        nbtFormater.setStrField(type.toString(), id);
+    }
+
+    public void addGlittering() {
+        this.getMeta().addEnchant(Enchantment.LUCK, 1, false);
+    }
     private void bindCraft() {};
 }
