@@ -21,6 +21,7 @@ import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionType;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.bukkit.Bukkit.getServer;
@@ -34,7 +35,7 @@ public class SoulBottle extends Item {
         addGlittering(); //Todo
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
-        lorebuilder.addCustomInfo("§bSouls stored: 0.0/100.0");
+        lorebuilder.addCustomInfo(Collections.singletonList("§bSouls stored: 0.0/100.0"));
 
         List<String> ab_lore = new ArrayList<>();;
         ab_lore.add("Store and accumulate");

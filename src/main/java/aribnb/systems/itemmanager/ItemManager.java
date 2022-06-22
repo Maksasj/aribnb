@@ -30,7 +30,11 @@ public class ItemManager {
         items.put("aribnb_blazeskull", new BlazeSkull("aribnb_blazeskull"));
     }
 
-    public static ItemStack getItem(String id) {
+    public static ItemStack getItemStack(String id) {
         return items.get(id).item;
+    }
+
+    public static Item getItem(String id) {
+        return items.get(id);
     }
 }

@@ -32,16 +32,8 @@ public class BlazeSkull extends Item {
         setArmor(4.0, EquipmentSlot.HEAD);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
-
-        List<String> lore = new ArrayList<>();;
-        lore.add("Molten skull of a");
-        lore.add("very ancient blaze");
-        lorebuilder.setLore(lore);
-
-        List<String> ab_lore = new ArrayList<>();;
-        ab_lore.add("Gives you §cRegeneration II§7");
-        ab_lore.add("while you on fire");
-        lorebuilder.addItemAbilitieLore(new ItemAbilitiesLore(ab_lore, AbilitieLoreType.PASSIVE));
+        lorebuilder.setLore(getDescription());
+        lorebuilder.addItemAbilitieLore(new ItemAbilitiesLore(getAbility(), AbilitieLoreType.PASSIVE));
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());
         getMeta().setLore(lorebuilder.buildLore());
 
@@ -51,6 +43,22 @@ public class BlazeSkull extends Item {
 
         getServer().getPluginManager().registerEvents(new BlazeSkullListener(), Aribnb.getPlugin());
     }
+
+    public List<String> getAbility() {
+        List<String> ab_lore = new ArrayList<>();;
+        ab_lore.add("Gives you §cRegeneration II§7");
+        ab_lore.add("while you on fire");
+
+        return ab_lore;
+    };
+
+    public List<String> getDescription() {
+        List<String> lore = new ArrayList<>();;
+        lore.add("Molten skull of a");
+        lore.add("very ancient blaze");
+
+        return lore;
+    };
 
     private void bindCraft() {
         ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_blazeskull_craft"), item);

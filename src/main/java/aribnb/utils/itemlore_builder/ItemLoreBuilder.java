@@ -98,8 +98,8 @@ public class ItemLoreBuilder {
         itemtype = value;
     }
 
-    public void addCustomInfo(String value) {
-        custom_info.add(value);
+    public void addCustomInfo(List<String> value) {
+        custom_info = value;
     }
 
     public void addItemAbilitieLore(ItemAbilitiesLore value) {

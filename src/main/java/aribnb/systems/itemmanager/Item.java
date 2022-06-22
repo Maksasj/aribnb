@@ -17,6 +17,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.List;
 import java.util.UUID;
 
 public class Item {
@@ -143,6 +144,7 @@ public class Item {
     public void bindTags(String id) {
         AribnbNbtFormater nbtFormater = new AribnbNbtFormater(getMeta());
         nbtFormater.setStrField("aribnb_type", type.toString());
+        nbtFormater.setStrField("aribnb_rarity", rarity.toId());
         nbtFormater.setStrField(type.toString(), id);
     }
 
@@ -163,6 +165,17 @@ public class Item {
             System.out.println("There was a severe internal reflection error when attempting to set the skin of a player skull via base64!");
         }
     }
+
+    public List<String> getDescription() {
+        return null;
+    };
+    public List<String> getAbility() {
+        return null;
+    };
+
+    public List<String> getCustomInfo() {
+        return null;
+    };
 
     private void bindCraft() {};
 }

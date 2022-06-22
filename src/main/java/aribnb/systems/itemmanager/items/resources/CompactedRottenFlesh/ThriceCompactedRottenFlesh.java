@@ -29,7 +29,7 @@ public class ThriceCompactedRottenFlesh extends Item {
     }
 
     private void bindCraft() {
-        ItemStack tmp_item = ItemManager.getItem("aribnb_twicecompactedrottenflesh");
+        ItemStack tmp_item = ItemManager.getItemStack("aribnb_twicecompactedrottenflesh");
         ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_thricecompactedrottenflesh_craft"), item);
         sr.shape(   "RRR",
                     "RRR",
