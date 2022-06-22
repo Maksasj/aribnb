@@ -3,6 +3,14 @@ package aribnb.systems.itemmanager;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.BlazeSkull.BlazeSkull;
 import aribnb.systems.itemmanager.items.artifacts.EnderPouch.EnderPouch;
 import aribnb.systems.itemmanager.items.artifacts.SoulBottle.SoulBottle;
+import aribnb.systems.itemmanager.items.resources.CompactedEnderPearl.CompactedEnderPearl;
+import aribnb.systems.itemmanager.items.resources.CompactedEnderPearl.FourfoldCompactedEnderPearl;
+import aribnb.systems.itemmanager.items.resources.CompactedEnderPearl.ThriceCompactedEnderPearl;
+import aribnb.systems.itemmanager.items.resources.CompactedEnderPearl.TwiceCompactedEnderPearl;
+import aribnb.systems.itemmanager.items.resources.CompactedGunpowder.CompactedGunpowder;
+import aribnb.systems.itemmanager.items.resources.CompactedGunpowder.FourfoldCompactedGunpowder;
+import aribnb.systems.itemmanager.items.resources.CompactedGunpowder.ThriceCompactedGunpowder;
+import aribnb.systems.itemmanager.items.resources.CompactedGunpowder.TwiceCompactedGunpowder;
 import aribnb.systems.itemmanager.items.resources.CompactedRottenFlesh.CompactedRottenFlesh;
 import aribnb.systems.itemmanager.items.resources.CompactedRottenFlesh.FourfoldCompactedRottenFlesh;
 import aribnb.systems.itemmanager.items.resources.CompactedRottenFlesh.ThriceCompactedRottenFlesh;
@@ -32,6 +40,16 @@ public class ItemManager {
         items.put("aribnb_twicecompactedstring", new TwiceCompactedString("aribnb_twicecompactedstring"));
         items.put("aribnb_thricecompactedstring", new ThriceCompactedString("aribnb_thricecompactedstring"));
         items.put("aribnb_fourfoldcompactedstring", new FourfoldCompactedString("aribnb_fourfoldcompactedstring"));
+
+        items.put("aribnb_compactedgunpowder", new CompactedGunpowder("aribnb_compactedgunpowder"));
+        items.put("aribnb_twicecompactedgunpowder", new TwiceCompactedGunpowder("aribnb_twicecompactedgunpowder"));
+        items.put("aribnb_thricecompactedgunpowder", new ThriceCompactedGunpowder("aribnb_thricecompactedgunpowder"));
+        items.put("aribnb_fourfoldcompactedgunpowder", new FourfoldCompactedGunpowder("aribnb_fourfoldcompactedgunpowder"));
+
+        items.put("aribnb_compactedenderpearl", new CompactedEnderPearl("aribnb_compactedenderpearl"));
+        items.put("aribnb_twicecompactedenderpearl", new TwiceCompactedEnderPearl("aribnb_twicecompactedenderpearl"));
+        items.put("aribnb_thricecompactedenderpearl", new ThriceCompactedEnderPearl("aribnb_thricecompactedenderpearl"));
+        items.put("aribnb_fourfoldcompactedenderpearl", new FourfoldCompactedEnderPearl("aribnb_fourfoldcompactedenderpearl"));
 
         items.put("aribnb_soulbottle", new SoulBottle("aribnb_soulbottle"));
         items.put("aribnb_enderpouch", new EnderPouch("aribnb_enderpouch"));
