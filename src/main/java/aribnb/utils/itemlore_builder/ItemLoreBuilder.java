@@ -170,9 +170,15 @@ public class ItemLoreBuilder {
 
         //Enchantments lore
         if(enchantments.size() > 0) {
-            tmp.add("");
+
+            if(!(enchantments.size() == 1 && enchantments.contains("Glow I"))) {
+                tmp.add("");
+            }
+
             for (String var : enchantments) {
-                tmp.add("§r§9"+var);
+                if(!var.equals("Glow I")) {
+                    tmp.add("§r§9"+var);
+                }
             }
         }
 

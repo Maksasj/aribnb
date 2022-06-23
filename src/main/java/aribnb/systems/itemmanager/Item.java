@@ -1,11 +1,14 @@
 package aribnb.systems.itemmanager;
 
+import aribnb.aribnb.Aribnb;
+import aribnb.systems.enchantmentsystem.GlitteringEffect.GlitteringEffect;
 import aribnb.utils.itemlore_builder.Rarities;
 import aribnb.utils.nbt_formater.AribnbNbtFormater;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import jdk.internal.logger.BootstrapLogger;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
@@ -149,7 +152,10 @@ public class Item {
     }
 
     public void addGlittering() {
-        this.getMeta().addEnchant(Enchantment.LUCK, 1, false);
+        NamespacedKey key = new NamespacedKey(Aribnb.getPlugin(), "aribnb_glitteringeffect");
+        GlitteringEffect glow = new GlitteringEffect(key);
+
+        this.getMeta().addEnchant(glow, 1, true);
     }
 
     public void setSkinViaBase64(SkullMeta meta, String base64) {
@@ -169,6 +175,7 @@ public class Item {
     public List<String> getDescription() {
         return null;
     };
+
     public List<String> getAbility() {
         return null;
     };

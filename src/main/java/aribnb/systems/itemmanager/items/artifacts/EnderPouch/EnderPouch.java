@@ -27,10 +27,8 @@ public class EnderPouch extends Item {
         addGlittering();
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
-        List<String> ab_lore = new ArrayList<>();;
-        ab_lore.add("Open your ender chest");
-        ab_lore.add("everywhere you want");
-        lorebuilder.addItemAbilitieLore(new ItemAbilitiesLore(ab_lore, AbilitieLoreType.RIGHT_CLICK));
+
+        lorebuilder.addItemAbilitieLore(new ItemAbilitiesLore(getAbility(), AbilitieLoreType.RIGHT_CLICK));
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());
         getMeta().setLore(lorebuilder.buildLore());
 
@@ -40,6 +38,14 @@ public class EnderPouch extends Item {
 
         getServer().getPluginManager().registerEvents(new OpenEnderPouchListener(), Aribnb.getPlugin());
     }
+
+    public List<String> getAbility() {
+        List<String> ab_lore = new ArrayList<>();;
+        ab_lore.add("Open your ender chest");
+        ab_lore.add("everywhere you want");
+
+        return ab_lore;
+    };
 
     private void bindCraft() {
         ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_enderpouch_craft"), item);

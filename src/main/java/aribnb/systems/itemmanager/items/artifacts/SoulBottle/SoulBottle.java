@@ -35,12 +35,9 @@ public class SoulBottle extends Item {
         addGlittering(); //Todo
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
-        lorebuilder.addCustomInfo(Collections.singletonList("§bSouls stored: 0.0/100.0"));
+        lorebuilder.addCustomInfo(getCustomInfo());
 
-        List<String> ab_lore = new ArrayList<>();;
-        ab_lore.add("Store and accumulate");
-        ab_lore.add("gained souls");
-        lorebuilder.addItemAbilitieLore(new ItemAbilitiesLore(ab_lore, AbilitieLoreType.CLICK));
+        lorebuilder.addItemAbilitieLore(new ItemAbilitiesLore(getAbility(), AbilitieLoreType.CLICK));
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());
         getMeta().setLore(lorebuilder.buildLore());
 
@@ -58,6 +55,18 @@ public class SoulBottle extends Item {
         getServer().getPluginManager().registerEvents(new OpenSoulBottleListener(), Aribnb.getPlugin());
         getServer().getPluginManager().registerEvents(new OpenSoulBottleGuiListener(), Aribnb.getPlugin());
     }
+
+    public List<String> getAbility() {
+        List<String> ab_lore = new ArrayList<>();;
+        ab_lore.add("Store and accumulate");
+        ab_lore.add("gained souls");
+
+        return ab_lore;
+    };
+
+    public List<String> getCustomInfo() {
+        return Collections.singletonList("§bSouls stored: 0.0/100.0");
+    };
 
     private void bindCraft() {
         ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_soulbottle_craft"), item);

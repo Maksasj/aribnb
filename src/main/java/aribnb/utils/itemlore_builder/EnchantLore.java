@@ -73,6 +73,8 @@ public class EnchantLore {
             return "Cure of Vanishing";
         } else if ("WATER_WORKER".equals(key)) {
             return "Aqua Affinity";
+        } else if ("aribnb_glitteringeffect".equals(key)) { //Glittering effect
+            return "Glow";
         }
         return "Unknown";
     }

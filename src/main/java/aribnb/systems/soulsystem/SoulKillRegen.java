@@ -17,7 +17,7 @@ public class SoulKillRegen implements Listener {
     public void regenSoulOnKill(EntityDeathEvent event) {
         Entity dead_entity = event.getEntity();
         Player player = (Player) event.getEntity().getKiller();
-        
+
         if(player != null) {
             soulsystem.addSoulToPlayer(player, 1.0);
         }

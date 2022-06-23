@@ -1,17 +1,23 @@
 package aribnb.systems.enchantmentsystem;
 
 import aribnb.aribnb.Aribnb;
+import aribnb.systems.enchantmentsystem.GlitteringEffect.GlitteringEffect;
 import aribnb.systems.itemmanager.Item;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import java.lang.reflect.Field;
 
 import static org.bukkit.Bukkit.getServer;
 
 public class EnchantmentSystem {
 
     public EnchantmentSystem() {
+        registerGlow();
         getServer().getPluginManager().registerEvents(new EnchantmentSystemListener(), Aribnb.getPlugin());
     };
 
@@ -348,5 +354,27 @@ public class EnchantmentSystem {
         }
 
         return false;
+    }
+
+    public void registerGlow() {
+        try {
+            Field f = Enchantment.class.getDeclaredField("acceptingNew");
+            f.setAccessible(true);
+            f.set(null, true);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            NamespacedKey key = new NamespacedKey(Aribnb.getPlugin(), "aribnb_glitteringeffect");
+
+            GlitteringEffect glow = new GlitteringEffect(key);
+            Enchantment.registerEnchantment(glow);
+        }
+        catch (IllegalArgumentException e){
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }
