@@ -7,6 +7,8 @@ public enum AttributeType {
     ATTACK_SPEED("Attack Speed"),
     MAX_HEALTH("Max Health"),
     ARMOR("Armor"),
+    ARMOR_TOUGHNESS("Armor Toughness"),
+    KNOCKBACK_RESISTANCE("Knockback Resistance"),
     NONE("None");
 
     private final String text;
@@ -29,6 +31,10 @@ public enum AttributeType {
             return ARMOR;
         } else if (attribute.equals(Attribute.GENERIC_MAX_HEALTH)) {
             return MAX_HEALTH;
+        } else if (attribute.equals(Attribute.GENERIC_ARMOR_TOUGHNESS)) {
+            return ARMOR_TOUGHNESS;
+        } else if (attribute.equals(Attribute.GENERIC_KNOCKBACK_RESISTANCE)) {
+            return KNOCKBACK_RESISTANCE;
         }
 
         return NONE;

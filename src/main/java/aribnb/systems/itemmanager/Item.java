@@ -61,7 +61,7 @@ public class Item {
         getMeta().setDisplayName("§r"+rarity.toColor()+name);
     }
 
-    public void setDamage(ItemMeta meta, Double value, EquipmentSlot slot) {
+    public static void setDamage(ItemMeta meta, Double value, EquipmentSlot slot) {
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "Attack damage",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
@@ -69,7 +69,7 @@ public class Item {
         this.getMeta().addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "Attack damage",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
-    public void setMaxHealth(ItemMeta meta, Double value, EquipmentSlot slot) {
+    public static void setMaxHealth(ItemMeta meta, Double value, EquipmentSlot slot) {
         meta.addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), "Max health",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
@@ -77,7 +77,7 @@ public class Item {
         this.getMeta().addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), "Max health",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
-    public void setFollowRange(ItemMeta meta, Double value, EquipmentSlot slot) {
+    public static void setFollowRange(ItemMeta meta, Double value, EquipmentSlot slot) {
         meta.addAttributeModifier(Attribute.GENERIC_FOLLOW_RANGE, new AttributeModifier(UUID.randomUUID(), "Follow range",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
@@ -85,7 +85,7 @@ public class Item {
         this.getMeta().addAttributeModifier(Attribute.GENERIC_FOLLOW_RANGE, new AttributeModifier(UUID.randomUUID(), "Follow range",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
-    public void setKnockbackResistance(ItemMeta meta, Double value, EquipmentSlot slot) {
+    public static void setKnockbackResistance(ItemMeta meta, Double value, EquipmentSlot slot) {
         meta.addAttributeModifier(Attribute.GENERIC_KNOCKBACK_RESISTANCE, new AttributeModifier(UUID.randomUUID(), "Knockback resistance",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
@@ -93,7 +93,7 @@ public class Item {
         this.getMeta().addAttributeModifier(Attribute.GENERIC_KNOCKBACK_RESISTANCE, new AttributeModifier(UUID.randomUUID(), "Knockback resistance",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
-    public void setMovementSpeed(ItemMeta meta, Double value, EquipmentSlot slot) {
+    public static void setMovementSpeed(ItemMeta meta, Double value, EquipmentSlot slot) {
         meta.addAttributeModifier(Attribute.GENERIC_MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "Movement speed",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
@@ -101,14 +101,14 @@ public class Item {
         this.getMeta().addAttributeModifier(Attribute.GENERIC_MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "Movement speed",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
-    public void setAttackKnockback(ItemMeta meta, Double value, EquipmentSlot slot) {
+    public static void setAttackKnockback(ItemMeta meta, Double value, EquipmentSlot slot) {
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_KNOCKBACK, new AttributeModifier(UUID.randomUUID(), "Attack knockback",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
     public void setAttackKnockback(Double value, EquipmentSlot slot) {
         this.getMeta().addAttributeModifier(Attribute.GENERIC_ATTACK_KNOCKBACK, new AttributeModifier(UUID.randomUUID(), "Attack knockback",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
-    public void setArmor(ItemMeta meta, Double value, EquipmentSlot slot) {
+    public static void setArmor(ItemMeta meta, Double value, EquipmentSlot slot) {
         meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "Armor",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
@@ -116,7 +116,7 @@ public class Item {
         this.getMeta().addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "Armor",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
-    public void setArmorToughness(ItemMeta meta, Double value, EquipmentSlot slot) {
+    public static void setArmorToughness(ItemMeta meta, Double value, EquipmentSlot slot) {
         meta.addAttributeModifier(Attribute.GENERIC_ARMOR_TOUGHNESS, new AttributeModifier(UUID.randomUUID(), "Armor toughness",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
@@ -125,7 +125,7 @@ public class Item {
     }
 
 
-    public void setLuck(ItemMeta meta, Double value, EquipmentSlot slot) {
+    public static void setLuck(ItemMeta meta, Double value, EquipmentSlot slot) {
         meta.addAttributeModifier(Attribute.GENERIC_LUCK, new AttributeModifier(UUID.randomUUID(), "Luck",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
@@ -133,7 +133,7 @@ public class Item {
         this.getMeta().addAttributeModifier(Attribute.GENERIC_LUCK, new AttributeModifier(UUID.randomUUID(), "Luck",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
-    public void setAttackSpeed(ItemMeta meta, Double value, EquipmentSlot slot) {
+    public static void setAttackSpeed(ItemMeta meta, Double value, EquipmentSlot slot) {
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "Attack speed",value, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
     }
 
