@@ -25,10 +25,14 @@ public class EnchantmentSystemListener implements Listener {
 
     @EventHandler
     public void onEnchant(EnchantItemEvent event) {
-        event.setCancelled(true);
-
         ItemStack item = event.getItem();
+
+        if(!(EnchantmentSystem.isEnchantable(item))) {
+            return;
+        }
+
         item.addUnsafeEnchantments(event.getEnchantsToAdd());
+        event.setCancelled(true);
 
         AribnbNbtFormater nbtformater = new AribnbNbtFormater(item);
 
@@ -81,6 +85,14 @@ public class EnchantmentSystemListener implements Listener {
         if (inv instanceof AnvilInventory) {
             if(event.getSlot() == 2) {
                 ItemStack item = event.getInventory().getItem(2);
+
+                if(item == null) {
+                    return;
+                }
+
+                if(!(EnchantmentSystem.isEnchantable(item))) {
+                    return;
+                }
 
                 AribnbNbtFormater nbtformater = new AribnbNbtFormater(item);
 

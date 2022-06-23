@@ -203,4 +203,150 @@ public class EnchantmentSystem {
 
         return meta;
     }
+
+    public static boolean isEnchantable(ItemStack item) {
+        Material mat = item.getType();
+        ItemMeta meta = item.getItemMeta();
+
+        // Wooden Item
+        if(mat == Material.WOODEN_SWORD) {
+            return true;
+        } else if(mat == Material.WOODEN_SHOVEL) {
+            return true;
+        } else if(mat == Material.WOODEN_PICKAXE) {
+            return true;
+        } else if(mat == Material.WOODEN_AXE) {
+            return true;
+        } else if(mat == Material.WOODEN_HOE) {
+            return true;
+
+            //Stone Items
+        } else if(mat == Material.STONE_SWORD) {
+            return true;
+        } else if(mat == Material.STONE_SHOVEL) {
+            return true;
+        } else if(mat == Material.STONE_PICKAXE) {
+            return true;
+        } else if(mat == Material.STONE_AXE) {
+            return true;
+        } else if(mat == Material.STONE_HOE) {
+            return true;
+
+            // Golden Items
+        } else if(mat == Material.GOLDEN_SWORD) {
+            return true;
+        } else if(mat == Material.GOLDEN_SHOVEL) {
+            return true;
+        } else if(mat == Material.GOLDEN_PICKAXE) {
+            return true;
+        } else if(mat == Material.GOLDEN_AXE) {
+            return true;
+        } else if(mat == Material.GOLDEN_HOE) {
+            return true;
+
+            // Iron Items
+        } else if(mat == Material.IRON_SWORD) {
+            return true;
+        } else if(mat == Material.IRON_SHOVEL) {
+            return true;
+        } else if(mat == Material.IRON_PICKAXE) {
+            return true;
+        } else if(mat == Material.IRON_AXE) {
+            return true;
+        } else if(mat == Material.IRON_HOE) {
+            return true;
+
+            // Diamond Items
+        } else if(mat == Material.DIAMOND_SWORD) {
+            return true;
+        } else if(mat == Material.DIAMOND_SHOVEL) {
+            return true;
+        } else if(mat == Material.DIAMOND_PICKAXE) {
+            return true;
+        } else if(mat == Material.DIAMOND_AXE) {
+            return true;
+        } else if(mat == Material.DIAMOND_HOE) {
+            return true;
+
+            // Netherite Items
+        } else if(mat == Material.NETHERITE_SWORD) {
+            return true;
+        } else if(mat == Material.NETHERITE_SHOVEL) {
+            return true;
+        } else if(mat == Material.NETHERITE_PICKAXE) {
+            return true;
+        } else if(mat == Material.NETHERITE_AXE) {
+            return true;
+        } else if(mat == Material.NETHERITE_HOE) {
+            return true;
+
+            // Leather Armor
+        } else if(mat == Material.LEATHER_HELMET) {
+            return true;
+        } else if(mat == Material.LEATHER_CHESTPLATE) {
+            return true;
+        } else if(mat == Material.LEATHER_LEGGINGS) {
+            return true;
+        } else if(mat == Material.LEATHER_BOOTS) {
+            return true;
+
+            //Chainmainl Armor
+        } else if(mat == Material.CHAINMAIL_HELMET) {
+            return true;
+        } else if(mat == Material.CHAINMAIL_CHESTPLATE) {
+            return true;
+        } else if(mat == Material.CHAINMAIL_LEGGINGS) {
+            return true;
+        } else if(mat == Material.CHAINMAIL_BOOTS) {
+            return true;
+
+            //Iron Armor
+        } else if(mat == Material.IRON_HELMET) {
+            return true;
+        } else if(mat == Material.IRON_CHESTPLATE) {
+            return true;
+        } else if(mat == Material.IRON_LEGGINGS) {
+            return true;
+        } else if(mat == Material.IRON_BOOTS) {
+            return true;
+
+            //Golden Armor
+        } else if(mat == Material.GOLDEN_HELMET) {
+            return true;
+        } else if(mat == Material.GOLDEN_CHESTPLATE) {
+            return true;
+        } else if(mat == Material.GOLDEN_LEGGINGS) {
+            return true;
+        } else if(mat == Material.GOLDEN_BOOTS) {
+            return true;
+
+            //Diamond Armor
+        } else if(mat == Material.DIAMOND_HELMET) {
+            return true;
+        } else if(mat == Material.DIAMOND_CHESTPLATE) {
+            return true;
+        } else if(mat == Material.DIAMOND_LEGGINGS) {
+            return true;
+        } else if(mat == Material.DIAMOND_BOOTS) {
+            return true;
+
+            //Netherite Armor
+        } else if(mat == Material.NETHERITE_HELMET) {
+            return true;
+        } else if(mat == Material.NETHERITE_CHESTPLATE) {
+            return true;
+        } else if(mat == Material.NETHERITE_LEGGINGS) {
+            return true;
+        } else if(mat == Material.NETHERITE_BOOTS) {
+            return true;
+
+            // Other Items
+        } else if(mat == Material.TURTLE_HELMET) {
+            return true;
+        } else if(mat == Material.TRIDENT) {
+            return true;
+        }
+
+        return false;
+    }
 }
