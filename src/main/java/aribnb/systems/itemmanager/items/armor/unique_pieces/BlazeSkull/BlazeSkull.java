@@ -3,6 +3,7 @@ package aribnb.systems.itemmanager.items.armor.unique_pieces.BlazeSkull;
 import aribnb.aribnb.Aribnb;
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
+import aribnb.systems.lootsystem.LootSystem;
 import aribnb.utils.itemlore_builder.AbilitieLoreType;
 import aribnb.utils.itemlore_builder.ItemAbilitiesLore;
 import aribnb.utils.itemlore_builder.ItemLoreBuilder;
@@ -10,6 +11,7 @@ import aribnb.utils.itemlore_builder.Rarities;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -25,7 +27,7 @@ public class BlazeSkull extends Item {
         super(ItemTypes.HELMET, Rarities.EPIC, Material.PLAYER_HEAD);
 
         SkullMeta skullmeta = (SkullMeta) getMeta();
-        setSkinViaBase64(skullmeta, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzc0ZjY1ZjliOTk1OGE2MzkyYzhiNjMzMjRkNzZlODBkMmI1MDljMTk4NWEwMDIzMmFlY2NlNDA5NTg1YWUyYSJ9fX0=");
+        setSkinViaBase64(skullmeta, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2QyYTViNGIxMDliZDc4OGVkYmEwMTcxZDBhYWI4YTU1MzA1YWMyZjU2MTg0ZGY3MGEzMTljZDQ4OGEzNmMzZSJ9fX0=");
 
         setName("Blaze Skull");
         setMaxHealth(3.0, EquipmentSlot.HEAD);
@@ -39,8 +41,8 @@ public class BlazeSkull extends Item {
 
         bindTags(id);
         item.setItemMeta(getMeta());
-        bindCraft();
 
+        LootSystem.addLoot(EntityType.BLAZE, this, 0.004);
         getServer().getPluginManager().registerEvents(new BlazeSkullListener(), Aribnb.getPlugin());
     }
 
@@ -59,14 +61,4 @@ public class BlazeSkull extends Item {
 
         return lore;
     };
-
-    private void bindCraft() {
-        ShapedRecipe sr = new ShapedRecipe(NamespacedKey.minecraft("aribnb_blazeskull_craft"), item);
-        sr.shape(   "SSS",
-                    "S S",
-                    "   ");
-        sr.setIngredient('S', Material.BLAZE_ROD);
-
-        Bukkit.getServer().addRecipe(sr);
-    }
 }
