@@ -4,6 +4,7 @@ public enum ItemTypes {
     ARTIFACT("aribnb_artifact"),
     RESOURCE("aribnb_resource"),
     HELMET("aribnb_helmet"),
+    CHESTPLATE("aribnb_chestplate"),
     SWORD("aribnb_sword"),
     NONE("aribnb_nonetype");
 

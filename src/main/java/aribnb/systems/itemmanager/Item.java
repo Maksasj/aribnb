@@ -137,11 +137,11 @@ public class Item {
     }
 
     public static void setAttackSpeed(ItemMeta meta, Double value, EquipmentSlot slot) {
-        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "Attack speed",value, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "Attack speed",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
     public void setAttackSpeed(Double value, EquipmentSlot slot) {
-        this.getMeta().addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "Attack speed",value, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND));
+        this.getMeta().addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "Attack speed",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
     public void bindTags(String id) {
