@@ -7,6 +7,7 @@ import aribnb.utils.nbt_formater.AribnbNbtFormater;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import jdk.internal.logger.BootstrapLogger;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
@@ -16,6 +17,7 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import java.lang.reflect.InvocationTargetException;
@@ -170,6 +172,21 @@ public class Item {
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             System.out.println("There was a severe internal reflection error when attempting to set the skin of a player skull via base64!");
         }
+    }
+
+    public void setLeatherColor(Color color) {
+        LeatherArmorMeta meta = (LeatherArmorMeta) getMeta();
+        meta.setColor(color);
+    }
+
+    public void setLeatherColorFromRGB(int r, int g, int b) {
+        LeatherArmorMeta meta = (LeatherArmorMeta) getMeta();
+        meta.setColor(Color.fromRGB(r, g, b));
+    }
+
+    public void setLeatherColorFromRGB(int color) {
+        LeatherArmorMeta meta = (LeatherArmorMeta) getMeta();
+        meta.setColor(Color.fromRGB(color));
     }
 
     public List<String> getDescription() {

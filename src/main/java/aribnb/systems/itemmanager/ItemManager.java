@@ -2,6 +2,7 @@ package aribnb.systems.itemmanager;
 
 import aribnb.systems.itemmanager.items.armor.unique_pieces.BlazeSkull.BlazeSkull;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.PiglinWarriorChestplate.PiglinWarriorChestplate;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticPants.RubberElasticPants;
 import aribnb.systems.itemmanager.items.artifacts.EnderPouch.EnderPouch;
 import aribnb.systems.itemmanager.items.artifacts.SoulBottle.SoulBottle;
 import aribnb.systems.itemmanager.items.resources.CompactedBone.CompactedBone;
@@ -66,6 +67,7 @@ public class ItemManager {
         items.put("aribnb_zombieslayer", new ZombieSlayer("aribnb_zombieslayer"));
         items.put("aribnb_blazeskull", new BlazeSkull("aribnb_blazeskull"));
         items.put("aribnb_piglinwarriorchestplate", new PiglinWarriorChestplate("aribnb_piglinwarriorchestplate"));
+        items.put("aribnb_rubberelasticpants", new RubberElasticPants("aribnb_rubberelasticpants"));
     }
 
     public static ItemStack getItemStack(String id) {

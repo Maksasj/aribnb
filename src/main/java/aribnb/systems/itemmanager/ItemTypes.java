@@ -5,6 +5,7 @@ public enum ItemTypes {
     RESOURCE("aribnb_resource"),
     HELMET("aribnb_helmet"),
     CHESTPLATE("aribnb_chestplate"),
+    LEGGINGS("aribnb_leggings"),
     SWORD("aribnb_sword"),
     NONE("aribnb_nonetype");
 
