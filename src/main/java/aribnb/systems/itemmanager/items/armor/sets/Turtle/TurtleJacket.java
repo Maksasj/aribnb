@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticPants;
+package aribnb.systems.itemmanager.items.armor.sets.Turtle;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -9,16 +9,17 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class RubberElasticPants extends Item {
+public class TurtleJacket extends Item {
 
-    public RubberElasticPants(String id) {
-        super(ItemTypes.LEGGINGS, Rarities.COMMON, Material.LEATHER_LEGGINGS);
+    public TurtleJacket(String id) {
+        super(ItemTypes.CHESTPLATE, Rarities.RARE, Material.LEATHER_CHESTPLATE);
 
-        setLeatherColorFromRGB(65335);
+        setLeatherColorFromRGB(4390763);
 
-        setName("Rubber-Elastic Pants");
-        setKnockbackResistance(0.3, EquipmentSlot.LEGS);
-        setArmor(2.0, EquipmentSlot.LEGS);
+        setName("Turtle Jacket");
+        addScalarMovementSpeed(-0.1, EquipmentSlot.CHEST);
+        setArmor(3.0, EquipmentSlot.CHEST);
+        setMaxHealth(5.0, EquipmentSlot.CHEST);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());
@@ -27,6 +28,6 @@ public class RubberElasticPants extends Item {
         bindTags(id);
         item.setItemMeta(getMeta());
 
-        LootSystem.addLoot(EntityType.ZOMBIE, this, 0.005);
+        LootSystem.addLoot(EntityType.TURTLE, this, 0.02);
     }
 }

@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.PorkBib;
+package aribnb.systems.itemmanager.items.armor.sets.ZombifiedPiglin;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -9,17 +9,15 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class PorkBib extends Item {
+public class FakeCrown extends Item {
 
-    public PorkBib(String id) {
-        super(ItemTypes.CHESTPLATE, Rarities.RARE, Material.LEATHER_CHESTPLATE);
+    public FakeCrown(String id) {
+        super(ItemTypes.HELMET, Rarities.RARE, Material.GOLDEN_HELMET);
 
-        setLeatherColorFromRGB(16746375);
+        setName("Fake Crown");
 
-        setName("Pork Bib");
-
-        setArmor(5.0, EquipmentSlot.CHEST);
-        setLuck(1.0, EquipmentSlot.CHEST);
+        setArmor(1.0, EquipmentSlot.HEAD);
+        setLuck(0.2, EquipmentSlot.HEAD);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());

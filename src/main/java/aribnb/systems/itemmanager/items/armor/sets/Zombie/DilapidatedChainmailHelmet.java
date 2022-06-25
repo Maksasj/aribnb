@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.DilapidatedChainmail;
+package aribnb.systems.itemmanager.items.armor.sets.Zombie;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -9,15 +9,14 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class DilapidatedChainmail extends Item {
+public class DilapidatedChainmailHelmet extends Item {
 
-    public DilapidatedChainmail(String id) {
-        super(ItemTypes.CHESTPLATE, Rarities.COMMON, Material.CHAINMAIL_CHESTPLATE);
+    public DilapidatedChainmailHelmet(String id) {
+        super(ItemTypes.HELMET, Rarities.COMMON, Material.CHAINMAIL_HELMET);
 
-        setName("Dilapidated Chainmail");
+        setName("Dilapidated Chainmail Helmet");
 
-        setArmor(2.0, EquipmentSlot.CHEST);
-        setMaxHealth(0.2, EquipmentSlot.CHEST);
+        setArmor(1.0, EquipmentSlot.CHEST);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());

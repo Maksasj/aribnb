@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.PorkPants;
+package aribnb.systems.itemmanager.items.armor.sets.Turtle;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -9,15 +9,17 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class PorkPants extends Item {
+public class TurtlePants extends Item {
 
-    public PorkPants(String id) {
+    public TurtlePants(String id) {
         super(ItemTypes.LEGGINGS, Rarities.RARE, Material.LEATHER_LEGGINGS);
 
-        setLeatherColorFromRGB(16746375);
+        setLeatherColorFromRGB(4390763);
 
-        setName("Pork Pants");
-        setArmor(3.0, EquipmentSlot.LEGS);
+        setName("Turtle Pants");
+        addScalarMovementSpeed(-0.1, EquipmentSlot.HEAD);
+        setArmor(3.0, EquipmentSlot.HEAD);
+        setMaxHealth(4.0, EquipmentSlot.HEAD);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());
@@ -26,6 +28,6 @@ public class PorkPants extends Item {
         bindTags(id);
         item.setItemMeta(getMeta());
 
-        LootSystem.addLoot(EntityType.ZOMBIFIED_PIGLIN, this, 0.005);
+        LootSystem.addLoot(EntityType.TURTLE, this, 0.02);
     }
 }

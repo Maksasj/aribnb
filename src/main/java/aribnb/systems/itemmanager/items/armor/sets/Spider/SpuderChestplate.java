@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.SpuderBoots;
+package aribnb.systems.itemmanager.items.armor.sets.Spider;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -12,16 +12,16 @@ import org.bukkit.inventory.EquipmentSlot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpuderBoots extends Item {
+public class SpuderChestplate extends Item {
 
-    public SpuderBoots(String id) {
-        super(ItemTypes.BOOTS, Rarities.UNCOMMON, Material.LEATHER_BOOTS);
+    public SpuderChestplate(String id) {
+        super(ItemTypes.CHESTPLATE, Rarities.UNCOMMON, Material.LEATHER_CHESTPLATE);
 
         setLeatherColorFromRGB(2236438);
 
-        setName("Spuder Boots");
-        addScalarMovementSpeed(0.05, EquipmentSlot.FEET);
-        setArmor(3.0, EquipmentSlot.FEET);
+        setName("Spuder Chestplate");
+        addScalarMovementSpeed(0.05, EquipmentSlot.CHEST);
+        setArmor(5.0, EquipmentSlot.CHEST);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.setLore(getDescription());

@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.FakeCrown;
+package aribnb.systems.itemmanager.items.armor.sets.Zombie;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -9,15 +9,16 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class FakeCrown extends Item {
+public class RubberElasticPants extends Item {
 
-    public FakeCrown(String id) {
-        super(ItemTypes.HELMET, Rarities.RARE, Material.GOLDEN_HELMET);
+    public RubberElasticPants(String id) {
+        super(ItemTypes.LEGGINGS, Rarities.COMMON, Material.LEATHER_LEGGINGS);
 
-        setName("Fake Crown");
+        setLeatherColorFromRGB(65335);
 
-        setArmor(1.0, EquipmentSlot.HEAD);
-        setLuck(0.2, EquipmentSlot.HEAD);
+        setName("Rubber-Elastic Pants");
+        setKnockbackResistance(0.3, EquipmentSlot.LEGS);
+        setArmor(2.0, EquipmentSlot.LEGS);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());
@@ -26,6 +27,6 @@ public class FakeCrown extends Item {
         bindTags(id);
         item.setItemMeta(getMeta());
 
-        LootSystem.addLoot(EntityType.ZOMBIFIED_PIGLIN, this, 0.005);
+        LootSystem.addLoot(EntityType.ZOMBIE, this, 0.005);
     }
 }

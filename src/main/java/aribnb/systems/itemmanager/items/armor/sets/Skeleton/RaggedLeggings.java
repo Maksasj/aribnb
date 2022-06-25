@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.DilapidatedChainmailHelmet;
+package aribnb.systems.itemmanager.items.armor.sets.Skeleton;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -9,14 +9,15 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class DilapidatedChainmailHelmet extends Item {
+public class RaggedLeggings extends Item {
 
-    public DilapidatedChainmailHelmet(String id) {
-        super(ItemTypes.HELMET, Rarities.COMMON, Material.CHAINMAIL_HELMET);
+    public RaggedLeggings(String id) {
+        super(ItemTypes.LEGGINGS, Rarities.COMMON, Material.LEATHER_LEGGINGS);
 
-        setName("Dilapidated Chainmail Helmet");
+        setLeatherColorFromRGB(16720161);
 
-        setArmor(1.0, EquipmentSlot.CHEST);
+        setName("Ragged Leggingss");
+        setArmor(2.0, EquipmentSlot.LEGS);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());
@@ -25,6 +26,6 @@ public class DilapidatedChainmailHelmet extends Item {
         bindTags(id);
         item.setItemMeta(getMeta());
 
-        LootSystem.addLoot(EntityType.ZOMBIE, this, 0.005);
+        LootSystem.addLoot(EntityType.SKELETON, this, 0.005);
     }
 }

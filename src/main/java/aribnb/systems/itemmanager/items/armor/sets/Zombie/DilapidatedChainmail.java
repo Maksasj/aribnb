@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.TurtleBoots;
+package aribnb.systems.itemmanager.items.armor.sets.Zombie;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -9,17 +9,15 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class TurtleBoots extends Item {
+public class DilapidatedChainmail extends Item {
 
-    public TurtleBoots(String id) {
-        super(ItemTypes.BOOTS, Rarities.RARE, Material.LEATHER_BOOTS);
+    public DilapidatedChainmail(String id) {
+        super(ItemTypes.CHESTPLATE, Rarities.COMMON, Material.CHAINMAIL_CHESTPLATE);
 
-        setLeatherColorFromRGB(4390763);
+        setName("Dilapidated Chainmail");
 
-        setName("Turtle Boots");
-        addScalarMovementSpeed(-0.1, EquipmentSlot.FEET);
-        setArmor(3.0, EquipmentSlot.FEET);
-        setMaxHealth(4.0, EquipmentSlot.FEET);
+        setArmor(2.0, EquipmentSlot.CHEST);
+        setMaxHealth(0.2, EquipmentSlot.CHEST);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());
@@ -28,6 +26,6 @@ public class TurtleBoots extends Item {
         bindTags(id);
         item.setItemMeta(getMeta());
 
-        LootSystem.addLoot(EntityType.TURTLE, this, 0.02);
+        LootSystem.addLoot(EntityType.ZOMBIE, this, 0.005);
     }
 }

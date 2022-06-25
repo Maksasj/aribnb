@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.GoldPlatedBoots;
+package aribnb.systems.itemmanager.items.armor.sets.Turtle;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -9,14 +9,17 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class GoldPlatedBoots extends Item {
+public class TurtleCap extends Item {
 
-    public GoldPlatedBoots(String id) {
-        super(ItemTypes.BOOTS, Rarities.RARE, Material.GOLDEN_BOOTS);
+    public TurtleCap(String id) {
+        super(ItemTypes.HELMET, Rarities.RARE, Material.LEATHER_HELMET);
 
-        setName("Gold-Plated Boots");
-        setMovementSpeed(0.05, EquipmentSlot.FEET);
-        setArmor(1.0, EquipmentSlot.FEET);
+        setLeatherColorFromRGB(4390763);
+
+        setName("Turtle Cap");
+        addScalarMovementSpeed(-0.1, EquipmentSlot.HEAD);
+        setArmor(3.0, EquipmentSlot.HEAD);
+        setMaxHealth(4.0, EquipmentSlot.HEAD);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());
@@ -25,6 +28,6 @@ public class GoldPlatedBoots extends Item {
         bindTags(id);
         item.setItemMeta(getMeta());
 
-        LootSystem.addLoot(EntityType.ZOMBIFIED_PIGLIN, this, 0.005);
+        LootSystem.addLoot(EntityType.TURTLE, this, 0.02);
     }
 }

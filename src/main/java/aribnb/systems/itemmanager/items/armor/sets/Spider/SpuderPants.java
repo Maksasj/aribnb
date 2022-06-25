@@ -1,31 +1,25 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.SpuderHelmet;
+package aribnb.systems.itemmanager.items.armor.sets.Spider;
 
-import aribnb.aribnb.Aribnb;
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.BlazeSkull.BlazeSkullListener;
 import aribnb.systems.lootsystem.LootSystem;
-import aribnb.utils.itemlore_builder.AbilitieLoreType;
-import aribnb.utils.itemlore_builder.ItemAbilitiesLore;
 import aribnb.utils.itemlore_builder.ItemLoreBuilder;
 import aribnb.utils.itemlore_builder.Rarities;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpuderHelmet extends Item {
+public class SpuderPants extends Item {
 
-    public SpuderHelmet(String id) {
-        super(ItemTypes.HELMET, Rarities.UNCOMMON, Material.PLAYER_HEAD);
+    public SpuderPants(String id) {
+        super(ItemTypes.LEGGINGS, Rarities.UNCOMMON, Material.LEATHER_LEGGINGS);
 
-        SkullMeta skullmeta = (SkullMeta) getMeta();
-        setSkinViaBase64(skullmeta, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNWE4MTRjZmE0MTgwMTJiMmJmN2FkNDY1YjM0ODc0NjdjZDNkNzgwOGIxODE3MThkZDkyNDVmNjVhNGFlYmI5YiJ9fX0=");
+        setLeatherColorFromRGB(2236438);
 
-        setName("Spuder Helmet");
+        setName("Spuder Pants");
         addScalarMovementSpeed(0.05, EquipmentSlot.LEGS);
         setArmor(3.0, EquipmentSlot.LEGS);
 
@@ -41,9 +35,9 @@ public class SpuderHelmet extends Item {
     }
 
     public List<String> getDescription() {
-        List<String> lore = new ArrayList<>();
+        List<String> lore = new ArrayList<>();;
         lore.add("Oh no, take that spider outside !!");
 
         return lore;
-    }
+    };
 }

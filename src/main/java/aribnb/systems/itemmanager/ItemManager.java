@@ -1,24 +1,28 @@
 package aribnb.systems.itemmanager;
 
 import aribnb.systems.itemmanager.items.armor.unique_pieces.BlazeSkull.BlazeSkull;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.DilapidatedChainmail.DilapidatedChainmail;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.DilapidatedChainmailHelmet.DilapidatedChainmailHelmet;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.FakeCrown.FakeCrown;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.GoldPlatedBoots.GoldPlatedBoots;
+import aribnb.systems.itemmanager.items.armor.sets.Skeleton.BowlerHat;
+import aribnb.systems.itemmanager.items.armor.sets.Skeleton.BowlerJacket;
+import aribnb.systems.itemmanager.items.armor.sets.Zombie.DilapidatedChainmail;
+import aribnb.systems.itemmanager.items.armor.sets.Zombie.DilapidatedChainmailHelmet;
+import aribnb.systems.itemmanager.items.armor.sets.ZombifiedPiglin.FakeCrown;
+import aribnb.systems.itemmanager.items.armor.sets.ZombifiedPiglin.GoldPlatedBoots;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.PiglinWarriorChestplate.PiglinWarriorChestplate;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.PorkBib.PorkBib;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.PorkPants.PorkPants;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticBoots.RubberElasticBoots;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticPants.RubberElasticPants;
+import aribnb.systems.itemmanager.items.armor.sets.ZombifiedPiglin.PorkBib;
+import aribnb.systems.itemmanager.items.armor.sets.ZombifiedPiglin.PorkPants;
+import aribnb.systems.itemmanager.items.armor.sets.Skeleton.RaggedBoots;
+import aribnb.systems.itemmanager.items.armor.sets.Skeleton.RaggedLeggings;
+import aribnb.systems.itemmanager.items.armor.sets.Zombie.RubberElasticBoots;
+import aribnb.systems.itemmanager.items.armor.sets.Zombie.RubberElasticPants;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.SerialKillerMask.SerialKillerMask;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.SpuderBoots.SpuderBoots;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.SpuderChestplate.SpuderChestplate;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.SpuderHelmet.SpuderHelmet;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.SpuderPants.SpuderPants;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.TurtleBoots.TurtleBoots;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.TurtleCap.TurtleCap;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.TurtleJacket.TurtleJacket;
-import aribnb.systems.itemmanager.items.armor.unique_pieces.TurtlePants.TurtlePants;
+import aribnb.systems.itemmanager.items.armor.sets.Spider.SpuderBoots;
+import aribnb.systems.itemmanager.items.armor.sets.Spider.SpuderChestplate;
+import aribnb.systems.itemmanager.items.armor.sets.Spider.SpuderHelmet;
+import aribnb.systems.itemmanager.items.armor.sets.Spider.SpuderPants;
+import aribnb.systems.itemmanager.items.armor.sets.Turtle.TurtleBoots;
+import aribnb.systems.itemmanager.items.armor.sets.Turtle.TurtleCap;
+import aribnb.systems.itemmanager.items.armor.sets.Turtle.TurtleJacket;
+import aribnb.systems.itemmanager.items.armor.sets.Turtle.TurtlePants;
 import aribnb.systems.itemmanager.items.artifacts.EnderPouch.EnderPouch;
 import aribnb.systems.itemmanager.items.artifacts.SoulBottle.SoulBottle;
 import aribnb.systems.itemmanager.items.resources.CompactedBone.CompactedBone;
@@ -118,6 +122,12 @@ public class ItemManager {
         items.put("aribnb_spuderchestplate", new SpuderChestplate("aribnb_spuderchestplate"));
         items.put("aribnb_spuderpants", new SpuderPants("aribnb_spuderpants"));
         items.put("aribnb_spuderboots", new SpuderBoots("aribnb_spuderboots"));
+
+        //SKELETON
+        items.put("aribnb_raggedboots", new RaggedBoots("aribnb_raggedboots"));
+        items.put("aribnb_raggedleggings", new RaggedLeggings("aribnb_raggedleggings"));
+        items.put("aribnb_bowlerjacket", new BowlerJacket("aribnb_bowlerjacket"));
+        items.put("aribnb_bowlerhat", new BowlerHat("aribnb_bowlerhat"));
     }
 
     public static ItemStack getItemStack(String id) {

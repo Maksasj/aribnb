@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.TurtleCap;
+package aribnb.systems.itemmanager.items.armor.sets.Turtle;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -9,17 +9,17 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class TurtleCap extends Item {
+public class TurtleBoots extends Item {
 
-    public TurtleCap(String id) {
-        super(ItemTypes.HELMET, Rarities.RARE, Material.LEATHER_HELMET);
+    public TurtleBoots(String id) {
+        super(ItemTypes.BOOTS, Rarities.RARE, Material.LEATHER_BOOTS);
 
         setLeatherColorFromRGB(4390763);
 
-        setName("Turtle Cap");
-        addScalarMovementSpeed(-0.1, EquipmentSlot.HEAD);
-        setArmor(3.0, EquipmentSlot.HEAD);
-        setMaxHealth(4.0, EquipmentSlot.HEAD);
+        setName("Turtle Boots");
+        addScalarMovementSpeed(-0.1, EquipmentSlot.FEET);
+        setArmor(3.0, EquipmentSlot.FEET);
+        setMaxHealth(4.0, EquipmentSlot.FEET);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());

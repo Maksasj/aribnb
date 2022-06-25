@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticBoots;
+package aribnb.systems.itemmanager.items.armor.sets.Skeleton;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -9,16 +9,15 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class RubberElasticBoots extends Item {
+public class BowlerJacket extends Item {
 
-    public RubberElasticBoots(String id) {
-        super(ItemTypes.BOOTS, Rarities.COMMON, Material.LEATHER_BOOTS);
+    public BowlerJacket(String id) {
+        super(ItemTypes.CHESTPLATE, Rarities.COMMON, Material.LEATHER_CHESTPLATE);
 
-        setLeatherColorFromRGB(65335);
+        setLeatherColorFromRGB(2204671);
 
-        setName("Rubber-Elastic Boots");
-        setMovementSpeed(0.05, EquipmentSlot.FEET);
-        setArmor(1.0, EquipmentSlot.FEET);
+        setName("Bowler Jacket");
+        setArmor(2.0, EquipmentSlot.CHEST);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());
@@ -27,6 +26,6 @@ public class RubberElasticBoots extends Item {
         bindTags(id);
         item.setItemMeta(getMeta());
 
-        LootSystem.addLoot(EntityType.ZOMBIE, this, 0.005);
+        LootSystem.addLoot(EntityType.SKELETON, this, 0.005);
     }
 }
