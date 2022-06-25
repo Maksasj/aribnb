@@ -45,6 +45,7 @@ import aribnb.systems.itemmanager.items.resources.CompactedString.CompactedStrin
 import aribnb.systems.itemmanager.items.resources.CompactedString.FourfoldCompactedString;
 import aribnb.systems.itemmanager.items.resources.CompactedString.ThriceCompactedString;
 import aribnb.systems.itemmanager.items.resources.CompactedString.TwiceCompactedString;
+import aribnb.systems.itemmanager.items.weapons.crossbows.EagleEye;
 import aribnb.systems.itemmanager.items.weapons.rod.BattleHook;
 import aribnb.systems.itemmanager.items.weapons.swords.ShortFrostBlade;
 import aribnb.systems.itemmanager.items.weapons.swords.VexDagger;
@@ -132,6 +133,9 @@ public class ItemManager {
 
         //PUFFERFISH
         items.put("aribnb_battlehook", new BattleHook("aribnb_battlehook"));
+
+        //PILLAGER
+        items.put("aribnb_eagleeye", new EagleEye("aribnb_eagleeye"));
     }
 
     public static ItemStack getItemStack(String id) {

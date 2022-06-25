@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.weapons.rod;
+package aribnb.systems.itemmanager.items.weapons.crossbows;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -12,15 +12,12 @@ import org.bukkit.inventory.EquipmentSlot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BattleHook extends Item {
+public class EagleEye extends Item {
 
-    public BattleHook(String id) {
-        super(ItemTypes.ROD, Rarities.EPIC, Material.FISHING_ROD);
+    public EagleEye(String id) {
+        super(ItemTypes.CROSSBOW, Rarities.EPIC, Material.CROSSBOW);
 
-        setName("Battle Hook");
-        setDamage(9.0, EquipmentSlot.HAND);
-        setAttackKnockback(1.0, EquipmentSlot.HAND);
-        setAttackSpeed(-2.5, EquipmentSlot.HAND);
+        setName("Eagle Eye");
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.setLore(getDescription());
@@ -29,12 +26,12 @@ public class BattleHook extends Item {
 
         bindTags(id);
         item.setItemMeta(getMeta());
-        LootSystem.addLoot(EntityType.PUFFERFISH, this, 0.006);
+        LootSystem.addLoot(EntityType.PILLAGER, this, 0.01);
     }
 
     public List<String> getDescription() {
         List<String> lore = new ArrayList<>();;
-        lore.add("Just like Pudge from Doka 2");
+        lore.add("Even grandfathers fought with this indestructible crossbow");
 
         return lore;
     };
