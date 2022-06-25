@@ -27,6 +27,6 @@ public class RubberElasticBoots extends Item {
         bindTags(id);
         item.setItemMeta(getMeta());
 
-        LootSystem.addLoot(EntityType.ZOMBIE, this, 0.5);
+        LootSystem.addLoot(EntityType.ZOMBIE, this, 0.005);
     }
 }

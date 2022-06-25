@@ -25,6 +25,6 @@ public class GoldPlatedBoots extends Item {
         bindTags(id);
         item.setItemMeta(getMeta());
 
-        LootSystem.addLoot(EntityType.ZOMBIFIED_PIGLIN, this, 0.5);
+        LootSystem.addLoot(EntityType.ZOMBIFIED_PIGLIN, this, 0.005);
     }
 }

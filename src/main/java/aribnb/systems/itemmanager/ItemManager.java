@@ -10,6 +10,7 @@ import aribnb.systems.itemmanager.items.armor.unique_pieces.PorkBib.PorkBib;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.PorkPants.PorkPants;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticBoots.RubberElasticBoots;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticPants.RubberElasticPants;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.SerialKillerMask.SerialKillerMask;
 import aribnb.systems.itemmanager.items.artifacts.EnderPouch.EnderPouch;
 import aribnb.systems.itemmanager.items.artifacts.SoulBottle.SoulBottle;
 import aribnb.systems.itemmanager.items.resources.CompactedBone.CompactedBone;
@@ -85,6 +86,8 @@ public class ItemManager {
         items.put("aribnb_porkpants", new PorkPants("aribnb_porkpants"));
         items.put("aribnb_goldplatedboots", new GoldPlatedBoots("aribnb_goldplatedboots"));
         items.put("aribnb_fakecrown", new FakeCrown("aribnb_fakecrown"));
+
+        items.put("aribnb_serialkillermask", new SerialKillerMask("aribnb_serialkillermask"));
     }
 
     public static ItemStack getItemStack(String id) {
