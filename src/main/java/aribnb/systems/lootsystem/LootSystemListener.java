@@ -29,7 +29,6 @@ public class LootSystemListener implements Listener {
                 if(random <= loot.chance) {
                     event.getDrops().clear();
                     entity.getLocation().getWorld().dropItem(entity.getLocation(), value.item);
-                    break;
                 }
             }
         }

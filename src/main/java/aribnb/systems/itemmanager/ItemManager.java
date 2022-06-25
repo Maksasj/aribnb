@@ -11,6 +11,10 @@ import aribnb.systems.itemmanager.items.armor.unique_pieces.PorkPants.PorkPants;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticBoots.RubberElasticBoots;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticPants.RubberElasticPants;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.SerialKillerMask.SerialKillerMask;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.SpuderBoots.SpuderBoots;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.SpuderChestplate.SpuderChestplate;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.SpuderHelmet.SpuderHelmet;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.SpuderPants.SpuderPants;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.TurtleBoots.TurtleBoots;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.TurtleCap.TurtleCap;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.TurtleJacket.TurtleJacket;
@@ -108,6 +112,12 @@ public class ItemManager {
 
         //STRAY
         items.put("aribnb_shortfrostblade", new ShortFrostBlade("aribnb_shortfrostblade"));
+
+        //SPIDER
+        items.put("aribnb_spuderhelmet", new SpuderHelmet("aribnb_spuderhelmet"));
+        items.put("aribnb_spuderchestplate", new SpuderChestplate("aribnb_spuderchestplate"));
+        items.put("aribnb_spuderpants", new SpuderPants("aribnb_spuderpants"));
+        items.put("aribnb_spuderboots", new SpuderBoots("aribnb_spuderboots"));
     }
 
     public static ItemStack getItemStack(String id) {
