@@ -29,7 +29,7 @@ public class VexDagger extends Item {
 
         bindTags(id);
         item.setItemMeta(getMeta());
-        LootSystem.addLoot(EntityType.VEX, this, 0.5);
+        LootSystem.addLoot(EntityType.VEX, this, 0.03);
     }
 
     public List<String> getDescription() {

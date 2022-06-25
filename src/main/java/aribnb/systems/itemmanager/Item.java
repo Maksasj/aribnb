@@ -106,6 +106,10 @@ public class Item {
         this.getMeta().addAttributeModifier(Attribute.GENERIC_MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "Movement speed",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
+    public void addScalarMovementSpeed(Double value, EquipmentSlot slot) {
+        this.getMeta().addAttributeModifier(Attribute.GENERIC_MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "Movement speed",value, AttributeModifier.Operation.ADD_SCALAR, slot));
+    }
+
     public static void setAttackKnockback(ItemMeta meta, Double value, EquipmentSlot slot) {
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_KNOCKBACK, new AttributeModifier(UUID.randomUUID(), "Attack knockback",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }

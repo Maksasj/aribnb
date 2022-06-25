@@ -11,6 +11,10 @@ import aribnb.systems.itemmanager.items.armor.unique_pieces.PorkPants.PorkPants;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticBoots.RubberElasticBoots;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticPants.RubberElasticPants;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.SerialKillerMask.SerialKillerMask;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.TurtleBoots.TurtleBoots;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.TurtleCap.TurtleCap;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.TurtleJacket.TurtleJacket;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.TurtlePants.TurtlePants;
 import aribnb.systems.itemmanager.items.artifacts.EnderPouch.EnderPouch;
 import aribnb.systems.itemmanager.items.artifacts.SoulBottle.SoulBottle;
 import aribnb.systems.itemmanager.items.resources.CompactedBone.CompactedBone;
@@ -94,6 +98,12 @@ public class ItemManager {
 
         //VEX
         items.put("aribnb_vexdagger", new VexDagger("aribnb_vexdagger"));
+
+        //TURTLE
+        items.put("aribnb_turtlecap", new TurtleCap("aribnb_turtlecap"));
+        items.put("aribnb_turtlejacket", new TurtleJacket("aribnb_turtlejacket"));
+        items.put("aribnb_turtlepants", new TurtlePants("aribnb_turtlepants"));
+        items.put("aribnb_turtleboots", new TurtleBoots("aribnb_turtleboots"));
 
     }
 
