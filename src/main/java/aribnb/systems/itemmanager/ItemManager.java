@@ -33,6 +33,7 @@ import aribnb.systems.itemmanager.items.resources.CompactedString.CompactedStrin
 import aribnb.systems.itemmanager.items.resources.CompactedString.FourfoldCompactedString;
 import aribnb.systems.itemmanager.items.resources.CompactedString.ThriceCompactedString;
 import aribnb.systems.itemmanager.items.resources.CompactedString.TwiceCompactedString;
+import aribnb.systems.itemmanager.items.weapons.swords.VexDagger;
 import aribnb.systems.itemmanager.items.weapons.swords.ZombieSlayer;
 import org.bukkit.inventory.ItemStack;
 
@@ -76,18 +77,24 @@ public class ItemManager {
         items.put("aribnb_blazeskull", new BlazeSkull("aribnb_blazeskull"));
         items.put("aribnb_piglinwarriorchestplate", new PiglinWarriorChestplate("aribnb_piglinwarriorchestplate"));
 
-        //Zombie Drops
+        //ZOMBIE
         items.put("aribnb_rubberelasticpants", new RubberElasticPants("aribnb_rubberelasticpants"));
         items.put("aribnb_rubberelasticboots", new RubberElasticBoots("aribnb_rubberelasticboots"));
         items.put("aribnb_dilapidatedchainmail", new DilapidatedChainmail("aribnb_dilapidatedchainmail"));
         items.put("aribnb_dilapidatedchainmailhelmet", new DilapidatedChainmailHelmet("aribnb_dilapidatedchainmailhelmet"));
 
+        //ZOMBIFIED_PIGLIN
         items.put("aribnb_porkbib", new PorkBib("aribnb_porkbib"));
         items.put("aribnb_porkpants", new PorkPants("aribnb_porkpants"));
         items.put("aribnb_goldplatedboots", new GoldPlatedBoots("aribnb_goldplatedboots"));
         items.put("aribnb_fakecrown", new FakeCrown("aribnb_fakecrown"));
 
+        //VINDICATOR
         items.put("aribnb_serialkillermask", new SerialKillerMask("aribnb_serialkillermask"));
+
+        //VEX
+        items.put("aribnb_vexdagger", new VexDagger("aribnb_vexdagger"));
+
     }
 
     public static ItemStack getItemStack(String id) {
