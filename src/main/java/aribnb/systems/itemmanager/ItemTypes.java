@@ -8,6 +8,7 @@ public enum ItemTypes {
     LEGGINGS("aribnb_leggings"),
     BOOTS("aribnb_boots"),
     SWORD("aribnb_sword"),
+    ROD("aribnb_rod"),
     NONE("aribnb_nonetype");
 
     private final String text;
