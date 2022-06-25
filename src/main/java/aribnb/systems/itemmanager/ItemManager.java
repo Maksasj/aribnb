@@ -1,7 +1,10 @@
 package aribnb.systems.itemmanager;
 
 import aribnb.systems.itemmanager.items.armor.unique_pieces.BlazeSkull.BlazeSkull;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.DilapidatedChainmail.DilapidatedChainmail;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.DilapidatedChainmailHelmet.DilapidatedChainmailHelmet;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.PiglinWarriorChestplate.PiglinWarriorChestplate;
+import aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticBoots.RubberElasticBoots;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticPants.RubberElasticPants;
 import aribnb.systems.itemmanager.items.artifacts.EnderPouch.EnderPouch;
 import aribnb.systems.itemmanager.items.artifacts.SoulBottle.SoulBottle;
@@ -67,7 +70,11 @@ public class ItemManager {
         items.put("aribnb_zombieslayer", new ZombieSlayer("aribnb_zombieslayer"));
         items.put("aribnb_blazeskull", new BlazeSkull("aribnb_blazeskull"));
         items.put("aribnb_piglinwarriorchestplate", new PiglinWarriorChestplate("aribnb_piglinwarriorchestplate"));
+
         items.put("aribnb_rubberelasticpants", new RubberElasticPants("aribnb_rubberelasticpants"));
+        items.put("aribnb_rubberelasticboots", new RubberElasticBoots("aribnb_rubberelasticboots"));
+        items.put("aribnb_dilapidatedchainmail", new DilapidatedChainmail("aribnb_dilapidatedchainmail"));
+        items.put("aribnb_dilapidatedchainmailhelmet", new DilapidatedChainmailHelmet("aribnb_dilapidatedchainmailhelmet"));
     }
 
     public static ItemStack getItemStack(String id) {

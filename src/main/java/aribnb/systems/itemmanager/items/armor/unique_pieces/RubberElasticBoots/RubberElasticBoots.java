@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticPants;
+package aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticBoots;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -9,16 +9,16 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class RubberElasticPants extends Item {
+public class RubberElasticBoots extends Item {
 
-    public RubberElasticPants(String id) {
-        super(ItemTypes.LEGGINGS, Rarities.COMMON, Material.LEATHER_LEGGINGS);
+    public RubberElasticBoots(String id) {
+        super(ItemTypes.BOOTS, Rarities.COMMON, Material.LEATHER_BOOTS);
 
         setLeatherColorFromRGB(65335);
 
-        setName("Rubber-Elastic Pants");
-        setKnockbackResistance(0.3, EquipmentSlot.LEGS);
-        setArmor(2.0, EquipmentSlot.LEGS);
+        setName("Rubber-Elastic Boots");
+        setMovementSpeed(0.05, EquipmentSlot.FEET);
+        setArmor(1.0, EquipmentSlot.FEET);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());

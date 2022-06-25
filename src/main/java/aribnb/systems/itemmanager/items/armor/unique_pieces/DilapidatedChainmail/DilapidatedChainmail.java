@@ -1,4 +1,4 @@
-package aribnb.systems.itemmanager.items.armor.unique_pieces.RubberElasticPants;
+package aribnb.systems.itemmanager.items.armor.unique_pieces.DilapidatedChainmail;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
@@ -9,16 +9,15 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class RubberElasticPants extends Item {
+public class DilapidatedChainmail extends Item {
 
-    public RubberElasticPants(String id) {
-        super(ItemTypes.LEGGINGS, Rarities.COMMON, Material.LEATHER_LEGGINGS);
+    public DilapidatedChainmail(String id) {
+        super(ItemTypes.CHESTPLATE, Rarities.COMMON, Material.CHAINMAIL_CHESTPLATE);
 
-        setLeatherColorFromRGB(65335);
+        setName("Dilapidated Chainmail");
 
-        setName("Rubber-Elastic Pants");
-        setKnockbackResistance(0.3, EquipmentSlot.LEGS);
-        setArmor(2.0, EquipmentSlot.LEGS);
+        setArmor(2.0, EquipmentSlot.CHEST);
+        setMaxHealth(0.2, EquipmentSlot.CHEST);
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.autoBuild(getRarity(), getMeta(), getType());
