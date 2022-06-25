@@ -74,6 +74,10 @@ public class Item {
         this.getMeta().addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "Attack damage",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
 
+    public void addScalarDamage(Double value, EquipmentSlot slot) {
+        this.getMeta().addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, new AttributeModifier(UUID.randomUUID(), "Attack damage",value, AttributeModifier.Operation.ADD_SCALAR, slot));
+    }
+
     public static void setMaxHealth(ItemMeta meta, Double value, EquipmentSlot slot) {
         meta.addAttributeModifier(Attribute.GENERIC_MAX_HEALTH, new AttributeModifier(UUID.randomUUID(), "Max health",value, AttributeModifier.Operation.ADD_NUMBER, slot));
     }
@@ -148,6 +152,10 @@ public class Item {
 
     public void setAttackSpeed(Double value, EquipmentSlot slot) {
         this.getMeta().addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "Attack speed",value, AttributeModifier.Operation.ADD_NUMBER, slot));
+    }
+
+    public void addScalarAttackSpeed(Double value, EquipmentSlot slot) {
+        this.getMeta().addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, new AttributeModifier(UUID.randomUUID(), "Attack speed",value, AttributeModifier.Operation.ADD_SCALAR, slot));
     }
 
     public void bindTags(String id) {

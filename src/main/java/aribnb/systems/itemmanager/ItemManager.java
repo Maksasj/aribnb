@@ -37,6 +37,7 @@ import aribnb.systems.itemmanager.items.resources.CompactedString.CompactedStrin
 import aribnb.systems.itemmanager.items.resources.CompactedString.FourfoldCompactedString;
 import aribnb.systems.itemmanager.items.resources.CompactedString.ThriceCompactedString;
 import aribnb.systems.itemmanager.items.resources.CompactedString.TwiceCompactedString;
+import aribnb.systems.itemmanager.items.weapons.swords.ShortFrostBlade;
 import aribnb.systems.itemmanager.items.weapons.swords.VexDagger;
 import aribnb.systems.itemmanager.items.weapons.swords.ZombieSlayer;
 import org.bukkit.inventory.ItemStack;
@@ -105,6 +106,8 @@ public class ItemManager {
         items.put("aribnb_turtlepants", new TurtlePants("aribnb_turtlepants"));
         items.put("aribnb_turtleboots", new TurtleBoots("aribnb_turtleboots"));
 
+        //STRAY
+        items.put("aribnb_shortfrostblade", new ShortFrostBlade("aribnb_shortfrostblade"));
     }
 
     public static ItemStack getItemStack(String id) {
