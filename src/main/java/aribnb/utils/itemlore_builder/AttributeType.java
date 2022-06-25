@@ -9,6 +9,7 @@ public enum AttributeType {
     ARMOR("Armor"),
     ARMOR_TOUGHNESS("Armor Toughness"),
     KNOCKBACK_RESISTANCE("Knockback Resistance"),
+    LUCK("Luck"),
     NONE("None");
 
     private final String text;
@@ -35,6 +36,8 @@ public enum AttributeType {
             return ARMOR_TOUGHNESS;
         } else if (attribute.equals(Attribute.GENERIC_KNOCKBACK_RESISTANCE)) {
             return KNOCKBACK_RESISTANCE;
+        } else if (attribute.equals(Attribute.GENERIC_LUCK)) {
+            return LUCK;
         }
 
         return NONE;
