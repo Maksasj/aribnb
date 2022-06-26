@@ -49,6 +49,7 @@ import aribnb.systems.itemmanager.items.resources.CompactedString.TwiceCompacted
 import aribnb.systems.itemmanager.items.resources.VoidInk.VoidInk;
 import aribnb.systems.itemmanager.items.weapons.crossbows.EagleEye;
 import aribnb.systems.itemmanager.items.weapons.rod.BattleHook;
+import aribnb.systems.itemmanager.items.weapons.swords.SacrificialDagger;
 import aribnb.systems.itemmanager.items.weapons.swords.ShortFrostBlade;
 import aribnb.systems.itemmanager.items.weapons.swords.VexDagger;
 import aribnb.systems.itemmanager.items.weapons.swords.ZombieSlayer;
@@ -144,6 +145,9 @@ public class ItemManager {
 
         //SQUID
         items.put("aribnb_voidink", new VoidInk("aribnb_voidink"));
+
+        //HUSK
+        items.put("aribnb_sacrificialdagger", new SacrificialDagger("aribnb_sacrificialdagger"));
     }
 
     public static ItemStack getItemStack(String id) {
