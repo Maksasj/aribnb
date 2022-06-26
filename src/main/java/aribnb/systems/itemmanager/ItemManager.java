@@ -47,6 +47,8 @@ import aribnb.systems.itemmanager.items.resources.CompactedString.FourfoldCompac
 import aribnb.systems.itemmanager.items.resources.CompactedString.ThriceCompactedString;
 import aribnb.systems.itemmanager.items.resources.CompactedString.TwiceCompactedString;
 import aribnb.systems.itemmanager.items.resources.VoidInk.VoidInk;
+import aribnb.systems.itemmanager.items.weapons.axes.AxeOfTrueBrute;
+import aribnb.systems.itemmanager.items.weapons.axes.TrueAxeOfTrueBrute;
 import aribnb.systems.itemmanager.items.weapons.crossbows.EagleEye;
 import aribnb.systems.itemmanager.items.weapons.rod.BattleHook;
 import aribnb.systems.itemmanager.items.weapons.swords.SacrificialDagger;
@@ -92,7 +94,11 @@ public class ItemManager {
         items.put("aribnb_soulbottle", new SoulBottle("aribnb_soulbottle"));
         items.put("aribnb_enderpouch", new EnderPouch("aribnb_enderpouch"));
         items.put("aribnb_zombieslayer", new ZombieSlayer("aribnb_zombieslayer"));
-        items.put("aribnb_piglinwarriorchestplate", new PiglinWarriorChestplate("aribnb_piglinwarriorchestplate"));
+
+        //PIGLIN
+        items.put("aribnb_piglinwarriorchestplate", new PiglinWarriorChestplate("aribnb_piglinwarriorcheestplate"));
+        items.put("aribnb_axeoftruebrute", new AxeOfTrueBrute("aribnb_axeoftruebrute"));
+        items.put("aribnb_trueaxeoftruebrute", new TrueAxeOfTrueBrute("aribnb_trueaxeoftruebrute"));
 
         //ZOMBIE
         items.put("aribnb_rubberelasticpants", new RubberElasticPants("aribnb_rubberelasticpants"));

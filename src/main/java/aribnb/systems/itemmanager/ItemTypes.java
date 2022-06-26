@@ -8,6 +8,7 @@ public enum ItemTypes {
     LEGGINGS("aribnb_leggings"),
     BOOTS("aribnb_boots"),
     SWORD("aribnb_sword"),
+    BATTLE_AXE("aribnb_battleaxe"),
     ROD("aribnb_rod"),
     CROSSBOW("aribnb_crossbow"),
     NONE("aribnb_nonetype");
