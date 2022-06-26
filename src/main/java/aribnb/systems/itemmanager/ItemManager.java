@@ -46,6 +46,7 @@ import aribnb.systems.itemmanager.items.resources.CompactedString.CompactedStrin
 import aribnb.systems.itemmanager.items.resources.CompactedString.FourfoldCompactedString;
 import aribnb.systems.itemmanager.items.resources.CompactedString.ThriceCompactedString;
 import aribnb.systems.itemmanager.items.resources.CompactedString.TwiceCompactedString;
+import aribnb.systems.itemmanager.items.resources.VoidInk.VoidInk;
 import aribnb.systems.itemmanager.items.weapons.crossbows.EagleEye;
 import aribnb.systems.itemmanager.items.weapons.rod.BattleHook;
 import aribnb.systems.itemmanager.items.weapons.swords.ShortFrostBlade;
@@ -140,6 +141,9 @@ public class ItemManager {
         //BLAZE
         items.put("aribnb_blazeskull", new BlazeSkull("aribnb_blazeskull"));
         items.put("aribnb_blazepants", new BlazePants("aribnb_blazepants"));
+
+        //SQUID
+        items.put("aribnb_voidink", new VoidInk("aribnb_voidink"));
     }
 
     public static ItemStack getItemStack(String id) {
