@@ -1,5 +1,6 @@
 package aribnb.systems.itemmanager;
 
+import aribnb.systems.itemmanager.items.armor.sets.Cat.*;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.BlazePants.BlazePants;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.BlazeSkull.BlazeSkull;
 import aribnb.systems.itemmanager.items.armor.sets.Skeleton.BowlerHat;
@@ -154,6 +155,14 @@ public class ItemManager {
 
         //HUSK
         items.put("aribnb_sacrificialdagger", new SacrificialDagger("aribnb_sacrificialdagger"));
+
+
+        //CAT
+        items.put("aribnb_catboots", new CatBoots("aribnb_catboots"));
+        items.put("aribnb_catpants", new CatPants("aribnb_catpants"));
+        items.put("aribnb_chestplate", new CatChestplate("aribnb_chestplate"));
+        items.put("aribnb_cathat", new CatHat("aribnb_cathat"));
+        items.put("aribnb_cathatt2", new CatHatT2("aribnb_cathatt2"));
     }
 
     public static ItemStack getItemStack(String id) {
