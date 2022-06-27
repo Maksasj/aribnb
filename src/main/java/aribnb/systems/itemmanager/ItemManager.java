@@ -1,6 +1,14 @@
 package aribnb.systems.itemmanager;
 
 import aribnb.systems.itemmanager.items.armor.sets.Cat.*;
+import aribnb.systems.itemmanager.items.armor.sets.Tarantula.TarantulaBoots;
+import aribnb.systems.itemmanager.items.armor.sets.Tarantula.TarantulaChestplate;
+import aribnb.systems.itemmanager.items.armor.sets.Tarantula.TarantulaHelmet;
+import aribnb.systems.itemmanager.items.armor.sets.Tarantula.TarantulaPants;
+import aribnb.systems.itemmanager.items.armor.sets.WhiteSpider.WhiteSpiderBoots;
+import aribnb.systems.itemmanager.items.armor.sets.WhiteSpider.WhiteSpiderChestplate;
+import aribnb.systems.itemmanager.items.armor.sets.WhiteSpider.WhiteSpiderHelmet;
+import aribnb.systems.itemmanager.items.armor.sets.WhiteSpider.WhiteSpiderPants;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.BlazePants.BlazePants;
 import aribnb.systems.itemmanager.items.armor.unique_pieces.BlazeSkull.BlazeSkull;
 import aribnb.systems.itemmanager.items.armor.sets.Skeleton.BowlerHat;
@@ -47,6 +55,7 @@ import aribnb.systems.itemmanager.items.resources.CompactedString.CompactedStrin
 import aribnb.systems.itemmanager.items.resources.CompactedString.FourfoldCompactedString;
 import aribnb.systems.itemmanager.items.resources.CompactedString.ThriceCompactedString;
 import aribnb.systems.itemmanager.items.resources.CompactedString.TwiceCompactedString;
+import aribnb.systems.itemmanager.items.resources.SpiderEgg.SpiderEgg;
 import aribnb.systems.itemmanager.items.resources.VoidInk.VoidInk;
 import aribnb.systems.itemmanager.items.weapons.axes.AxeOfTrueBrute;
 import aribnb.systems.itemmanager.items.weapons.axes.TrueAxeOfTrueBrute;
@@ -92,6 +101,9 @@ public class ItemManager {
         items.put("aribnb_thricecompactedbone", new ThriceCompactedBone("aribnb_thricecompactedbone"));
         items.put("aribnb_fourfoldcompactedbone", new FourfoldCompactedBone("aribnb_fourfoldcompactedbone"));
 
+        items.put("aribnb_spideregg", new SpiderEgg("aribnb_spideregg"));
+
+        //OTHER
         items.put("aribnb_soulbottle", new SoulBottle("aribnb_soulbottle"));
         items.put("aribnb_enderpouch", new EnderPouch("aribnb_enderpouch"));
         items.put("aribnb_zombieslayer", new ZombieSlayer("aribnb_zombieslayer"));
@@ -163,6 +175,18 @@ public class ItemManager {
         items.put("aribnb_chestplate", new CatChestplate("aribnb_chestplate"));
         items.put("aribnb_cathat", new CatHat("aribnb_cathat"));
         items.put("aribnb_cathatt2", new CatHatT2("aribnb_cathatt2"));
+
+        //TARANTULA
+        items.put("aribnb_tarantulaboots", new TarantulaBoots("aribnb_tarantulaboots"));
+        items.put("aribnb_tarantulapants", new TarantulaPants("aribnb_tarantulapants"));
+        items.put("aribnb_tarantulachestplate", new TarantulaChestplate("aribnb_tarantulachestplate"));
+        items.put("aribnb_tarantulahelmet", new TarantulaHelmet("aribnb_tarantulahelmet"));
+
+        //WHITE SPIDER
+        items.put("aribnb_whitespiderboots", new WhiteSpiderBoots("aribnb_whitespiderboots"));
+        items.put("aribnb_whitespiderpants", new WhiteSpiderPants("aribnb_whitespiderpants"));
+        items.put("aribnb_whitespiderchestplate", new WhiteSpiderChestplate("aribnb_whitespiderchestplate"));
+        items.put("aribnb_whitespiderhelmet", new WhiteSpiderHelmet("aribnb_whitespiderhelmet"));
     }
 
     public static ItemStack getItemStack(String id) {

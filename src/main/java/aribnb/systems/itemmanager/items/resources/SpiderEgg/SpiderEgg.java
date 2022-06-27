@@ -1,29 +1,29 @@
-package aribnb.systems.itemmanager.items.armor.sets.Cat;
+package aribnb.systems.itemmanager.items.resources.SpiderEgg;
 
 import aribnb.systems.itemmanager.Item;
 import aribnb.systems.itemmanager.ItemTypes;
 import aribnb.systems.lootsystem.LootSystem;
 import aribnb.utils.itemlore_builder.ItemLoreBuilder;
 import aribnb.utils.itemlore_builder.Rarities;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.entity.EntityType;
-import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CatHat extends Item {
+public class SpiderEgg extends Item {
 
-    public CatHat(String id) {
-        super(ItemTypes.HELMET, Rarities.RARE, Material.PLAYER_HEAD);
+    public SpiderEgg(String id) {
+        super(ItemTypes.RESOURCE, Rarities.UNCOMMON, Material.PLAYER_HEAD);
 
         SkullMeta skullmeta = (SkullMeta) getMeta();
-        setSkinViaBase64(skullmeta, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRiNDVjYmFhMTlmZTNkNjhjODU2Y2QzODQ2YzAzYjVmNTlkZTgxYTQ4MGVlYzkyMWFiNGZhM2NkODEzMTcifX19");
+        setSkinViaBase64(skullmeta, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTY2MTcxMzEyNTBlNTc4MzMzYTQ0MWZkZjRhNWI4YzYyMTYzNjQwYTlkMDZjZDY3ZGI4OTAzMWQwM2FjY2Y2In19fQ==");
 
-        setName("Cat Hat");
-        setLuck(1.0, EquipmentSlot.HEAD);
-        setArmor(2.0, EquipmentSlot.HEAD);
+        setName("Spider Egg");
 
         ItemLoreBuilder lorebuilder = new ItemLoreBuilder();
         lorebuilder.setLore(getDescription());
@@ -32,13 +32,12 @@ public class CatHat extends Item {
 
         bindTags(id);
         item.setItemMeta(getMeta());
-
-        LootSystem.addLoot(EntityType.CAT, this, 0.01);
+        LootSystem.addLoot(EntityType.CAVE_SPIDER, this, 0.002);
     }
 
     public List<String> getDescription() {
         List<String> lore = new ArrayList<>();;
-        lore.add("Meow?");
+        lore.add("Used to summon the Black Widow");
 
         return lore;
     };
